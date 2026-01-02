@@ -7,26 +7,99 @@
 </head>
 <body>
 
-<header>
-  <h1>Il tuo Nome</h1>
-  <nav>
-    <a href="about.html">Chi sono</a>
-    <a href="fotografia.html">Fotografia</a>
-    <a href="arte.html">Arte</a>
-    <a href="scrittura.html">Scrittura</a>
-  </nav>
-</header>
+<nav>
+  <a href="#about">About</a>
+  <a href="#fotografia">Fotografia</a>
+  <a href="#arte">Arte</a>
+  <a href="#scrittura">Scrittura</a>
+</nav>
 
-<section>
+<section class="hero">
+  <img src="images/hero.jpg" alt="Ritratto">
+  <h1>Il tuo Nome</h1>
   <p>
-    Fotografia, arte e scrittura come pratica personale.  
-    Questo spazio raccoglie progetti, immagini e testi.
+    Fotografia, arte e scrittura come pratica sensibile.
   </p>
 </section>
 
-<footer>
-  © 2026 – Il tuo Nome
-</footer>
+<section id="about">
+  <h2>About</h2>
+  <p>
+    Artista visivə e fotografo/a.
+    Il mio lavoro esplora identità, memoria e presenza.
+  </p>
+</section>
+
+<section id="fotografia">
+  <h2>Fotografia</h2>
+  <div class="gallery">
+    <img src="images/foto1.jpg">
+    <img src="images/foto2.jpg">
+  </div>
+</section>
+
+<section id="arte">
+  <h2>Arte</h2>
+  <div class="gallery">
+    <img src="images/arte1.jpg">
+  </div>
+</section>
+
+<section id="scrittura">
+  <h2>Scrittura</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>Testo I</h3>
+      <p>Estratto breve, poetico.</p>
+    </div>
+    <div class="card">
+      <h3>Testo II</h3>
+      <p>Scrittura come spazio fragile.</p>
+    </div>
+  </div>
+</section>
+
+<section id="progetti">
+  <h2>Progetti</h2>
+
+  <div class="projects">
+
+    <!-- PROGETTO 1 -->
+    <div class="project">
+      <div class="project-info">
+        <span>Featured Project</span>
+        <h3>Nome del progetto</h3>
+        <p>
+          Descrizione del progetto.
+          Qui racconti il concept, l’intenzione, il contesto.
+          Poche frasi, molto chiare.
+        </p>
+      </div>
+
+      <div class="project-media">
+        <img src="images/progetto1.jpg" alt="Preview progetto">
+      </div>
+    </div>
+
+    <!-- PROGETTO 2 (invertito) -->
+    <div class="project reverse">
+      <div class="project-media">
+        <img src="images/progetto2.jpg" alt="Preview progetto">
+      </div>
+
+      <div class="project-info">
+        <span>Project</span>
+        <h3>Altro progetto</h3>
+        <p>
+          Un progetto fotografico o artistico.
+          Può essere una serie, una ricerca, una mostra.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 
 </body>
 </html>
