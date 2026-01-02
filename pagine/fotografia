@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Fotografia</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+  <h1>Fotografia</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">Chi sono</a>
+    <a href="arte.html">Arte</a>
+    <a href="scrittura.html">Scrittura</a>
+  </nav>
+</header>
+
+<section class="gallery">
+  <img src="images/foto1.jpg">
+  <img src="images/foto2.jpg">
+</section>
+
+</body>
+</html>
