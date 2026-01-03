@@ -178,3 +178,25 @@ p {
     grid-template-columns: 1fr;
   }
 }
+.about-button {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 14px 28px;
+  border-radius: 999px;
+  background: linear-gradient(
+          135deg,
+          var(--accent),
+          #e6f4fa
+  );
+  color: var(--text);
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  box-shadow: var(--glow);
+  transition: all 0.3s ease;
+}
+
+.about-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 80px rgba(142,202,230,0.35);
+}
