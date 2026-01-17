@@ -10,6 +10,11 @@ document.addEventListener('DOMContentLoaded', () => {
         initGithubProjects(100, 'all-projects-container'); // Progetti page: fetch all (limit 100)
     }
 
+    // Initialize Instagram (functions internally checks for container existence)
+    if (typeof initInstagramFeed === 'function') {
+        initInstagramFeed();
+    }
+
     updateCopyrightYear();
 });
 
