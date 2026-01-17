@@ -1,111 +1,152 @@
 <!DOCTYPE html>
 <html lang="it">
-<head>
-  <meta charset="UTF-8">
-  <title>Yulia</title>
-  <link rel="stylesheet" href="css/style.css">
-</head>
 
-<script src="js/age.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yulia | Portfolio</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
 
 <body>
 
-<nav>
-  <a href="#about">About</a>
-  <a href="#fotografia">Fotografia</a>
-  <a href="#arte">Arte</a>
-  <a href="#scrittura">Scrittura</a>
-</nav>
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-container">
+            <div class="logo">
+                <a href="#">Yulia.</a>
+            </div>
+            <div class="nav-links">
+                <a href="about.html">About</a>
+                <a href="fotografia.html">Fotografia</a>
+                <a href="arte.html">Arte</a>
+                <a href="scrittura.html">Scrittura</a>
+            </div>
+        </div>
+    </nav>
 
-<section class="hero">
-  <img src="images/hero.jpg" alt="Ritratto">
-  <h1>Yulia</h1>
-  <p>
-    La bellezza è nelle piccole cose, basta saper aprire gli occhi.
-  </p>
-</section>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container fade-in">
+            <img src="images/hero.jpg" alt="Yulia Portrait" class="hero-img">
+            <h1>Yulia</h1>
+            <div class="hero-text">
+                <p>
+                    "La bellezza è nelle piccole cose, basta saper aprire gli occhi."
+                </p>
+                <a href="about.html" class="cta-button">Scopri di più &rarr;</a>
+            </div>
+        </div>
+    </section>
 
-<section id="about">
-  <h2>About</h2>
-  <p>
-    Ciao! Io sono Yulia, ho <span id="age">--</span> anni e tutto ciò che è arte mi appassiona.
-  </p>
+    <!-- About Preview -->
+    <section id="about-preview" style="background-color: var(--color-bg);">
+        <div class="container fade-in">
+            <div style="text-align: center; max-width: 700px; margin: 0 auto;">
+                <h2>Chi Sono</h2>
+                <p style="margin-bottom: var(--spacing-md); color: var(--color-text-light); font-size: 1.1rem;">
+                    Ciao! Sono Yulia, ho <span id="age">--</span> anni e sono una creativa appassionata.
+                    Uno sguardo al mio percorso, ai miei studi e alla mia passione per l'arte.
+                </p>
+                <a href="about.html"
+                    style="text-decoration: underline; color: var(--color-primary); font-weight: 500;">Leggi la mia
+                    storia &rarr;</a>
+            </div>
+        </div>
+    </section>
 
-  <a href="about.html" class="about-button">
-    Vuoi scoprire di più su di me?
-  </a>
-</section>
+    <!-- Projects Section (Dynamic) -->
+    <section id="progetti">
+        <div class="container">
+            <h2 class="fade-in">Progetti Recenti</h2>
+            <p class="fade-in" style="margin-bottom: var(--spacing-md); color: var(--color-text-light);">
+                Alcuni dei miei lavori di sviluppo e codice, direttamente da GitHub.
+            </p>
 
-<section id="fotografia">
-  <h2>Fotografia</h2>
-  <div class="gallery">
-    <img src="images/foto1.jpg">
-    <img src="images/foto2.jpg">
-  </div>
-</section>
+            <div id="github-projects" class="projects-grid">
+                <!-- Projects will be loaded here by main.js -->
+                <div class="project-card">
+                    <h3>Caricamento progetti...</h3>
+                </div>
+            </div>
 
-<section id="arte">
-  <h2>Arte</h2>
-  <div class="gallery">
-    <img src="images/arte1.jpg">
-  </div>
-</section>
+            <div class="fade-in" style="text-align: center; margin-top: var(--spacing-md);">
+                <a href="progetti.html" class="cta-button secondary">Vedi tutti i progetti &rarr;</a>
+            </div>
+        </div>
+    </section>
 
-<section id="scrittura">
-  <h2>Scrittura</h2>
-  <div class="cards">
-    <div class="card">
-      <h3>Testo I</h3>
-      <p>Estratto breve, poetico.</p>
-    </div>
-    <div class="card">
-      <h3>Testo II</h3>
-      <p>Scrittura come spazio fragile.</p>
-    </div>
-  </div>
-</section>
+    <!-- Section Previews -->
+    <section id="explore" style="background-color: var(--color-secondary);">
+        <div class="container">
+            <h2 class="fade-in" style="text-align: center; margin-bottom: var(--spacing-lg);">Esplora il mio Mondo</h2>
 
-<section id="progetti">
-  <h2>Progetti</h2>
+            <div class="gallery-grid">
+                <!-- Photography Preview -->
+                <div class="gallery-item fade-in">
+                    <img src="images/foto1.jpg" alt="Fotografia">
+                    <div
+                        style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,0.6); color: white; padding: 1rem;">
+                        <h3>Fotografia</h3>
+                        <a href="fotografia.html"
+                            style="color: white; font-size: 0.8rem; text-transform: uppercase;">Guarda la galleria
+                            &rarr;</a>
+                    </div>
+                </div>
 
-  <div class="projects">
+                <!-- Art Preview -->
+                <div class="gallery-item fade-in">
+                    <img src="images/arte1.jpg" alt="Arte">
+                    <div
+                        style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,0.6); color: white; padding: 1rem;">
+                        <h3>Arte</h3>
+                        <a href="arte.html" style="color: white; font-size: 0.8rem; text-transform: uppercase;">Scopri
+                            le opere &rarr;</a>
+                    </div>
+                </div>
 
-    <!-- PROGETTO 1 -->
-    <div class="project">
-      <div class="project-info">
-        <span>Featured Project</span>
-        <h3>Nome del progetto</h3>
-        <p>
-          Descrizione del progetto.
-          Qui racconti il concept, l’intenzione, il contesto.
-          Poche frasi, molto chiare.
-        </p>
-      </div>
+                <!-- Writing Preview -->
+                <div class="gallery-item fade-in">
+                    <!-- Placeholder image for writing if no specific image exists -->
+                    <div
+                        style="width: 100%; height: 100%; background: #d4a373; display: flex; align-items: center; justify-content: center; color: white;">
+                        <span style="font-family: var(--font-serif); font-size: 3rem;">Ag</span>
+                    </div>
+                    <div
+                        style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,0.6); color: white; padding: 1rem;">
+                        <h3>Scrittura</h3>
+                        <a href="scrittura.html"
+                            style="color: white; font-size: 0.8rem; text-transform: uppercase;">Leggi i testi &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-      <div class="project-media">
-        <img src="images/progetto1.jpg" alt="Preview progetto">
-      </div>
-    </div>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="year">2024</span> Yulia. Tutti i diritti riservati.</p>
+            <div style="margin-top: var(--spacing-xs);">
+                <a href="https://github.com/YuliaD2609" target="_blank" style="margin: 0 10px;">GitHub</a>
+                <a href="https://www.instagram.com/yulia__photography/" target="_blank"
+                    style="margin: 0 10px;">Instagram</a>
+                <a href="mailto:example@email.com" style="margin: 0 10px;">Email</a>
+            </div>
+        </div>
+    </footer>
 
-    <!-- PROGETTO 2 (invertito) -->
-    <div class="project reverse">
-      <div class="project-media">
-        <img src="images/progetto2.jpg" alt="Preview progetto">
-      </div>
-
-      <div class="project-info">
-        <span>Project</span>
-        <h3>Altro progetto</h3>
-        <p>
-          Un progetto fotografico o artistico.
-          Può essere una serie, una ricerca, una mostra.
-        </p>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
 </body>
+
 </html>

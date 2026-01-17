@@ -1,28 +1,101 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
   <meta charset="UTF-8">
-  <title>Chi sono</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me | Yulia</title>
+  <!-- Fonts & CSS -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@700&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    .timeline {
+      border-left: 2px solid var(--color-primary);
+      padding-left: var(--spacing-md);
+      margin-left: 10px;
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: var(--spacing-md);
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: calc(-1 * var(--spacing-md) - 6px);
+      top: 5px;
+      width: 10px;
+      height: 10px;
+      background: var(--color-primary);
+      border-radius: 50%;
+    }
+  </style>
 </head>
+
 <body>
 
-<header>
-  <h1>Chi sono</h1>
   <nav>
-    <a href="index.html">Home</a>
-    <a href="fotografia.html">Fotografia</a>
-    <a href="arte.html">Arte</a>
-    <a href="scrittura.html">Scrittura</a>
+    <div class="container nav-container">
+      <div class="logo"><a href="index.html">Yulia.</a></div>
+      <div class="nav-links">
+        <a href="about.html" style="color: var(--color-primary);">About</a>
+        <a href="fotografia.html">Fotografia</a>
+        <a href="arte.html">Arte</a>
+        <a href="scrittura.html">Scrittura</a>
+      </div>
+    </div>
   </nav>
-</header>
 
-<section>
-  <p>
-    Qui scrivi un testo personale.  
-    Non un curriculum, ma una dichiarazione d’intenti.
-  </p>
-</section>
+  <section class="container" style="margin-top: var(--spacing-lg);">
+    <h1 class="fade-in">About Me</h1>
 
+    <div class="projects-grid" style="align-items: start;">
+
+      <div class="fade-in">
+        <img src="images/hero.jpg" alt="Yulia Profile"
+          style="width: 100%; height: auto; border-radius: var(--radius-md); box-shadow: var(--shadow-md);">
+      </div>
+
+      <div class="fade-in">
+        <h2>La mia storia</h2>
+        <p style="margin-bottom: var(--spacing-sm);">
+          Sono Yulia, una creativa appassionata di tecnologia e arte. Credo fermamente che questi due mondi non siano
+          opposti, ma complementari.
+        </p>
+        <p style="margin-bottom: var(--spacing-md);">
+          Il mio percorso spazia dallo studio rigoroso alla libera espressione artistica. Amo catturare momenti
+          attraverso la fotografia, esplorare emozioni con la pittura e dare forma ai pensieri attraverso la scrittura.
+        </p>
+
+        <h3>Percorso di Studi</h3>
+        <div class="timeline">
+          <div class="timeline-item">
+            <h4>Corso di Studi Attuale</h4>
+            <span style="color: var(--color-text-light);">202X - Presente</span>
+            <p>Descrizione del percorso di studi universitario o specialistico.</p>
+          </div>
+          <div class="timeline-item">
+            <h4>Diploma Superiore</h4>
+            <span style="color: var(--color-text-light);">201X - 202X</span>
+            <p>Specializzazione e competenze acquisite.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; <span id="year"></span> Yulia.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
 </body>
+
 </html>

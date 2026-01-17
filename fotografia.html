@@ -1,26 +1,100 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
   <meta charset="UTF-8">
-  <title>Fotografia</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fotografia | Yulia</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@700&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
-<header>
-  <h1>Fotografia</h1>
   <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">Chi sono</a>
-    <a href="arte.html">Arte</a>
-    <a href="scrittura.html">Scrittura</a>
+    <div class="container nav-container">
+      <div class="logo"><a href="index.html">Yulia.</a></div>
+      <div class="nav-links">
+        <a href="about.html">About</a>
+        <a href="fotografia.html" style="color: var(--color-primary);">Fotografia</a>
+        <a href="arte.html">Arte</a>
+        <a href="scrittura.html">Scrittura</a>
+      </div>
+    </div>
   </nav>
-</header>
 
-<section class="gallery">
-  <img src="images/foto1.jpg">
-  <img src="images/foto2.jpg">
-</section>
+  <section class="container" style="margin-top: var(--spacing-lg);">
+    <h1 class="fade-in" style="text-align: center;">Fotografia</h1>
+    <p class="fade-in"
+      style="text-align: center; max-width: 600px; margin: 0 auto var(--spacing-md); color: var(--color-text-light);">
+      Scatti rubati, momenti eterni e prospettive uniche.
+    </p>
 
+    <!-- Tabs -->
+    <div class="tabs fade-in">
+      <button class="tab-btn active" data-target="personal-favs">Personal Favourites</button>
+      <button class="tab-btn" data-target="public-favs">Public Favourites (Instagram)</button>
+    </div>
+
+    <!-- Personal Favourites -->
+    <div id="personal-favs" class="tab-container tab-content gallery-grid fade-in">
+      <!-- Add legitimate images here -->
+      <div class="gallery-item">
+        <img src="images/foto1.jpg" loading="lazy" alt="Photo 1">
+      </div>
+      <div class="gallery-item">
+        <img src="images/foto2.jpg" loading="lazy" alt="Photo 2">
+      </div>
+      <div class="gallery-item">
+        <img src="images/hero.jpg" loading="lazy" alt="Photo 3">
+      </div>
+      <!-- Placeholders for layout demo -->
+      <div class="gallery-item" style="background:#ddd;"></div>
+      <div class="gallery-item" style="background:#eee;"></div>
+      <div class="gallery-item" style="background:#ccc;"></div>
+    </div>
+
+    <!-- Public Favourites (Instagram) -->
+    <div id="public-favs" class="tab-content gallery-grid fade-in" style="display: none;">
+      <!-- Instagram Link Card -->
+      <div class="gallery-item"
+        style="grid-column: 1 / -1; height: auto; aspect-ratio: auto; background: none; border: none; text-align: center; padding: 2rem;">
+        <h3>@yulia__photography</h3>
+        <p style="margin-bottom: 1rem; color: var(--color-text-light);">Segui i miei scatti più popolari su Instagram.
+        </p>
+        <a href="https://www.instagram.com/yulia__photography/" target="_blank" class="cta-button">
+          Visita il Profilo Instagram &rarr;
+        </a>
+      </div>
+
+      <div class="gallery-item">
+        <img src="images/foto2.jpg" loading="lazy" alt="Popular 1">
+        <div
+          style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,0.5); color: white; padding: 5px 10px; font-size: 0.8rem;">
+          ❤️ Vedi su Instagram
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/foto1.jpg" loading="lazy" alt="Popular 2">
+        <div
+          style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,0.5); color: white; padding: 5px 10px; font-size: 0.8rem;">
+          ❤️ Vedi su Instagram
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; <span id="year"></span> Yulia.</p>
+    </div>
+  </footer>
+
+  <script src="js/gallery.js"></script>
+  <script src="js/main.js"></script>
 </body>
+
 </html>

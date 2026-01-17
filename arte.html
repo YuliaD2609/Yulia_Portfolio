@@ -1,25 +1,109 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
   <meta charset="UTF-8">
-  <title>Arte</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arte | Yulia</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@700&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    .filters {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      background: none;
+      border: 1px solid var(--color-secondary);
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      cursor: pointer;
+      font-family: var(--font-main);
+      transition: var(--transition-fast);
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      background-color: var(--color-primary);
+      color: white;
+      border-color: var(--color-primary);
+    }
+  </style>
 </head>
+
 <body>
 
-<header>
-  <h1>Arte</h1>
   <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">Chi sono</a>
-    <a href="fotografia.html">Fotografia</a>
-    <a href="scrittura.html">Scrittura</a>
+    <div class="container nav-container">
+      <div class="logo"><a href="index.html">Yulia.</a></div>
+      <div class="nav-links">
+        <a href="about.html">About</a>
+        <a href="fotografia.html">Fotografia</a>
+        <a href="arte.html" style="color: var(--color-primary);">Arte</a>
+        <a href="scrittura.html">Scrittura</a>
+      </div>
+    </div>
   </nav>
-</header>
 
-<section class="gallery">
-  <img src="images/arte1.jpg">
-</section>
+  <section class="container" style="margin-top: var(--spacing-lg);">
+    <h1 class="fade-in" style="text-align: center;">Arte</h1>
+    <p class="fade-in"
+      style="text-align: center; max-width: 600px; margin: 0 auto var(--spacing-md); color: var(--color-text-light);">
+      Esplorazioni visive attraverso pittura, bianco e nero e media non convenzionali.
+    </p>
 
+    <!-- Filters -->
+    <div class="filters fade-in">
+      <button class="filter-btn active" data-filter="all">Tutti</button>
+      <button class="filter-btn" data-filter="painting">Pittura</button>
+      <button class="filter-btn" data-filter="bnw">Bianco e Nero</button>
+      <button class="filter-btn" data-filter="unconventional">Media Non Convenzionali</button>
+    </div>
+
+    <!-- Gallery -->
+    <div class="gallery-grid fade-in">
+      <!-- Items must have data-category matching filters -->
+
+      <!-- Painting -->
+      <div class="gallery-item" data-category="painting">
+        <img src="images/arte1.jpg" alt="Pittura 1">
+      </div>
+
+      <!-- B&W -->
+      <div class="gallery-item" data-category="bnw">
+        <img src="images/foto1.jpg" alt="Bianco e Nero Placeholder" style="filter: grayscale(100%);">
+      </div>
+
+      <!-- Unconventional -->
+      <div class="gallery-item" data-category="unconventional">
+        <div
+          style="width: 100%; height: 100%; background: #e0e0e0; display: flex; align-items: center; justify-content: center; padding: 20px; text-align: center;">
+          <p>Installazione Mixed Media</p>
+        </div>
+      </div>
+
+      <!-- More Items ... -->
+      <div class="gallery-item" data-category="painting">
+        <div style="width: 100%; height: 100%; background: #d4a373;"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; <span id="year"></span> Yulia.</p>
+    </div>
+  </footer>
+
+  <script src="js/gallery.js"></script>
+  <script src="js/main.js"></script>
 </body>
+
 </html>

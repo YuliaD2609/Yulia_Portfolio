@@ -1,28 +1,96 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
   <meta charset="UTF-8">
-  <title>Scrittura</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scrittura | Yulia</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@700&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
-<header>
-  <h1>Scrittura</h1>
   <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">Chi sono</a>
-    <a href="fotografia.html">Fotografia</a>
-    <a href="arte.html">Arte</a>
+    <div class="container nav-container">
+      <div class="logo"><a href="index.html">Yulia.</a></div>
+      <div class="nav-links">
+        <a href="about.html">About</a>
+        <a href="fotografia.html">Fotografia</a>
+        <a href="arte.html">Arte</a>
+        <a href="scrittura.html" style="color: var(--color-primary);">Scrittura</a>
+      </div>
+    </div>
   </nav>
-</header>
 
-<section>
-  <div class="text-piece">
-    <h2>Titolo testo</h2>
-    <p>Testo breve, poesia o estratto.</p>
-  </div>
-</section>
+  <section class="container" style="margin-top: var(--spacing-lg);">
+    <h1 class="fade-in" style="text-align: center;">Scrittura</h1>
+    <p class="fade-in"
+      style="text-align: center; max-width: 600px; margin: 0 auto var(--spacing-md); color: var(--color-text-light);">
+      Parole che prendono forma. I miei scritti e le mie partecipazioni ai concorsi letterari.
+    </p>
 
+    <div class="projects-grid">
+
+      <!-- Column 1: Writings -->
+      <div class="fade-in">
+        <h2>I Miei Scritti</h2>
+        <div class="writing-list">
+          <div class="writing-item">
+            <h3>Titolo del Testo I</h3>
+            <p style="font-style: italic; margin-bottom: 0.5rem; color: var(--color-text-light);">Estratto breve o
+              incipit...</p>
+            <p>
+              Un breve paragrafo introduttivo che invoglia alla lettura. Il testo completo potrebbe aprirsi in un modale
+              o in una nuova pagina.
+            </p>
+            <a href="#"
+              style="color: var(--color-primary); font-size: 0.9rem; margin-top: 10px; display: inline-block;">Leggi
+              tutto</a>
+          </div>
+
+          <div class="writing-item">
+            <h3>Titolo del Testo II</h3>
+            <p>
+              Un altro esempio di scrittura creativa, poesia o prosa.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Column 2: Competitions -->
+      <div class="fade-in">
+        <h2>Concorsi & Premi</h2>
+        <ul style="border-left: 1px solid var(--color-secondary); padding-left: var(--spacing-md);">
+          <li style="margin-bottom: var(--spacing-md);">
+            <h4>Nome del Concorso 2024</h4>
+            <p style="color: var(--color-text-light);">Finalista / Vincitrice</p>
+            <p>Breve descrizione dell'opera presentata.</p>
+          </li>
+          <li style="margin-bottom: var(--spacing-md);">
+            <h4>Premio Letterario XYZ</h4>
+            <p style="color: var(--color-text-light);">Menzione d'Onore</p>
+          </li>
+          <li style="margin-bottom: var(--spacing-md);">
+            <h4>Concorso Nazionale Poesia</h4>
+            <p style="color: var(--color-text-light);">Partecipazione</p>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; <span id="year"></span> Yulia.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
 </body>
+
 </html>
