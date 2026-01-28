@@ -679,4 +679,10 @@ footer {
     padding-bottom: var(--spacing-md);
     margin-bottom: var(--spacing-md);
   }
-}
+}/ *   C o n t a c t   F o r m   R e f i n e m e n t s   * / 
+ . c o n t a c t - f o r m   t e x t a r e a   { 
+     m i n - h e i g h t :   1 5 0 p x ; 
+     r e s i z e :   n o n e ; 
+ } 
+  
+ 
