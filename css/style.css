@@ -700,25 +700,13 @@ footer {
   font-family: inherit;
 }
 
- . l o g o   a    {
-         f o n t - f a m i l y :    ' D a n c i n g   S c r i p t '  ,    c u r s i v e ;
-         f o n t - s i z e :    2 r e m ;
-         f o n t - w e i g h t :    6 0 0 ;
-         t e x t - d e c o r a t i o n :    n o n e ;
-         c o l o r :    v a r ( - - c o l o r - t e x t ) ;
-         t r a n s i t i o n :    c o l o r   0 . 3 s   e a s e ;
-     
+
+.logo a {
+  font-family: 'Pacifico', cursive;
+  font-size: 2rem;
+  font-weight: 400;
+  text-decoration: none;
+  color: var(--color-text);
+  transition: color 0.3s ease;
 }
 
-     
- . l o g o   a   { 
-     / *   O p t i o n   1 :   P a c i f i c o   ( C u t e ,   B r u s h   S c r i p t )   * / 
-     f o n t - f a m i l y :   ' P a c i f i c o ' ,   c u r s i v e ; 
-     f o n t - s i z e :   2 r e m ; 
-     f o n t - w e i g h t :   4 0 0 ;   
-     t e x t - d e c o r a t i o n :   n o n e ; 
-     c o l o r :   v a r ( - - c o l o r - t e x t ) ; 
-     t r a n s i t i o n :   c o l o r   0 . 3 s   e a s e ; 
- } 
-  
- 
