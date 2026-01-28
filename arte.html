@@ -45,8 +45,10 @@
       <div class="nav-links">
         <a href="about.html">About</a>
         <a href="fotografia.html">Fotografia</a>
+        <a href="lavori.html">Lavori</a>
         <a href="arte.html" style="color: var(--color-primary);">Arte</a>
         <a href="scrittura.html">Scrittura</a>
+        <a href="progetti.html">Progetti</a>
       </div>
     </div>
   </nav>
@@ -60,10 +62,10 @@
 
     <!-- Filters -->
     <div class="filters fade-in">
-      <button class="filter-btn active" data-filter="all">Tutti</button>
-      <button class="filter-btn" data-filter="painting">Pittura</button>
-      <button class="filter-btn" data-filter="bnw">Bianco e Nero</button>
-      <button class="filter-btn" data-filter="unconventional">Media Non Convenzionali</button>
+      <button class="filter-btn active" onclick="filterGallery('all')">Tutti</button>
+      <button class="filter-btn" onclick="filterGallery('painting')">Pittura</button>
+      <button class="filter-btn" onclick="filterGallery('bnw')">Bianco e Nero</button>
+      <button class="filter-btn" onclick="filterGallery('unconventional')">Media Non Convenzionali</button>
     </div>
 
     <!-- Gallery -->

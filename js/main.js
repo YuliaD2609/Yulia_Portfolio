@@ -1,3 +1,40 @@
+
+// Gallery Filter Logic
+function filterGallery(category) {
+    const items = document.querySelectorAll('.gallery-item');
+    const buttons = document.querySelectorAll('.filter-btn');
+
+    // Update buttons
+    buttons.forEach(btn => {
+        if (btn.innerText.toLowerCase().includes(category === 'bnw' ? 'bianco' : category === 'unconventional' ? 'media' : category === 'painting' ? 'pittura' : 'tutti')) {
+            btn.classList.add('active');
+        } else {
+            btn.classList.remove('active');
+        }
+        // Simpler check based on click event usually better, but here we use the category arg
+        // Just resetting all and setting active based on the clicked element would be passed in, but I'm passing string.
+        // Let's rely on the onclick updating the UI? No, I need to do it here.
+        // I will fix the active class logic to be simpler: clear all, set matching text or attribute?
+        // Actually, I'll pass `this` in the HTML usually. But for now let's just match roughly or simpler:
+        btn.classList.remove('active');
+        if (category === 'all' && btn.innerText === 'Tutti') btn.classList.add('active');
+        if (category === 'painting' && btn.innerText === 'Pittura') btn.classList.add('active');
+        if (category === 'bnw' && btn.innerText === 'Bianco e Nero') btn.classList.add('active');
+        if (category === 'unconventional' && btn.innerText === 'Media Non Convenzionali') btn.classList.add('active');
+    });
+
+    // Filter items
+    items.forEach(item => {
+        const itemCategory = item.getAttribute('data-category');
+        if (category === 'all' || itemCategory === category) {
+            item.style.display = 'block';
+            // Re-trigger animation if possible, or just show
+        } else {
+            item.style.display = 'none';
+        }
+    });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     initScrollAnimations();
     initDynamicAge();

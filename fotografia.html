@@ -19,72 +19,82 @@
       <div class="nav-links">
         <a href="about.html">About</a>
         <a href="fotografia.html" style="color: var(--color-primary);">Fotografia</a>
+        <a href="lavori.html">Lavori</a>
         <a href="arte.html">Arte</a>
         <a href="scrittura.html">Scrittura</a>
+        <a href="progetti.html">Progetti</a>
       </div>
     </div>
   </nav>
 
   <section class="container" style="margin-top: var(--spacing-lg);">
-    <h1 class="fade-in" style="text-align: center;">Fotografia</h1>
-    <p class="fade-in"
-      style="text-align: center; max-width: 600px; margin: 0 auto var(--spacing-md); color: var(--color-text-light);">
-      Scatti rubati, momenti eterni e prospettive uniche.
-    </p>
-
-    <!-- Tabs -->
-    <div class="tabs fade-in">
-      <button class="tab-btn active" data-target="personal-favs">Personal Favourites</button>
-      <button class="tab-btn" data-target="public-favs">Public Favourites (Instagram)</button>
+    <div class="magazine-header fade-in">
+      <h1>Fotografia</h1>
+      <p style="text-align: center; max-width: 600px; margin: 0 auto 1.5rem auto; color: var(--color-text-light);">
+        Scatti rubati, momenti eterni e prospettive uniche.
+      </p>
+      <a href="https://www.instagram.com/yulia__photography/" target="_blank" class="cta-button">
+        Scopri di più &rarr;
+      </a>
     </div>
 
-    <!-- Personal Favourites -->
-    <div id="personal-favs" class="tab-container tab-content gallery-grid fade-in">
-      <!-- Add legitimate images here -->
-      <div class="gallery-item">
-        <img src="images/foto1.jpg" loading="lazy" alt="Photo 1">
+    <!-- Magazine Grid -->
+    <div class="magazine-grid fade-in">
+      <!-- Item 1 (Large 2x2) -->
+      <div class="magazine-item">
+        <img src="images/instagram/post_1.jpg" loading="lazy" alt="Highlight Photo 1">
       </div>
-      <div class="gallery-item">
-        <img src="images/foto2.jpg" loading="lazy" alt="Photo 2">
+      <!-- Item 2 (Wide 2x1) -->
+      <div class="magazine-item">
+        <img src="images/instagram/post_2.jpg" loading="lazy" alt="Highlight Photo 2">
       </div>
-      <div class="gallery-item">
-        <img src="images/hero.jpg" loading="lazy" alt="Photo 3">
+      <!-- Item 3 (Small 1x1) -->
+      <div class="magazine-item">
+        <img src="images/instagram/post_3.jpg" loading="lazy" alt="Highlight Photo 3">
       </div>
-      <!-- Placeholders for layout demo -->
-      <div class="gallery-item" style="background:#ddd;"></div>
-      <div class="gallery-item" style="background:#eee;"></div>
-      <div class="gallery-item" style="background:#ccc;"></div>
-    </div>
-
-    <!-- Public Favourites (Instagram) -->
-    <div id="public-favs" class="tab-content gallery-grid fade-in" style="display: none;">
-      <!-- Instagram Link Card -->
-      <div class="gallery-item"
-        style="grid-column: 1 / -1; height: auto; aspect-ratio: auto; background: none; border: none; text-align: center; padding: 2rem;">
-        <h3>@yulia__photography</h3>
-        <p style="margin-bottom: 1rem; color: var(--color-text-light);">Segui i miei scatti più popolari su Instagram.
-        </p>
-        <a href="https://www.instagram.com/yulia__photography/" target="_blank" class="cta-button">
-          Visita il Profilo Instagram &rarr;
-        </a>
+      <!-- Item 4 (Small 1x1) -->
+      <div class="magazine-item">
+        <img src="images/instagram/post_4.jpg" loading="lazy" alt="Highlight Photo 4">
       </div>
-
-      <div class="gallery-item">
-        <img src="images/foto2.jpg" loading="lazy" alt="Popular 1">
-        <div
-          style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,0.5); color: white; padding: 5px 10px; font-size: 0.8rem;">
-          ❤️ Vedi su Instagram
-        </div>
+      <!-- Item 5 (Large 2x2) -->
+      <div class="magazine-item">
+        <img src="images/instagram/post_5.jpg" loading="lazy" alt="Highlight Photo 5">
       </div>
-      <div class="gallery-item">
-        <img src="images/foto1.jpg" loading="lazy" alt="Popular 2">
-        <div
-          style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,0.5); color: white; padding: 5px 10px; font-size: 0.8rem;">
-          ❤️ Vedi su Instagram
-        </div>
+      <!-- Item 6 (Large 2x2) -->
+      <div class="magazine-item">
+        <img src="images/instagram/post_6.jpg" loading="lazy" alt="Highlight Photo 6">
       </div>
     </div>
+  </section>
 
+  <!-- Contact Section -->
+  <div class="contact-layout">
+    <div class="contact-text">
+      <h2>Vuoi immortalare i tuoi ricordi?</h2>
+      <p style="color: var(--color-text-light); font-size: 1.1rem; margin-bottom: 2rem; line-height: 1.8;">
+        Se sei interessato a uno shooting fotografico, a una collaborazione o vuoi semplicemente chiedermi informazioni,
+        scrivimi.
+        <br><br>
+        Compila il modulo e sarò felice di catturare la tua storia.
+      </p>
+    </div>
+
+    <!-- Form on Right -->
+    <form class="contact-form" action="https://formspree.io/f/xwvbkznd" method="POST">
+      <div>
+        <label for="email" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">La tua Email</label>
+        <input type="email" id="email" name="email" placeholder="esempio@email.com" required>
+      </div>
+      <div>
+        <label for="message" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Messaggio</label>
+        <textarea id="message" name="message" placeholder="Raccontami la tua idea..." required></textarea>
+      </div>
+      <div style="text-align: left;">
+        <button type="submit" class="cta-button" style="border: none; cursor: pointer;">Invia Messaggio</button>
+      </div>
+    </form>
+  </div>
+  </div>
   </section>
 
   <footer>
@@ -93,9 +103,6 @@
     </div>
   </footer>
 
-  <script src="js/gallery.js"></script>
-  <script src="js/instagram_data.js"></script>
-  <script src="js/instagram.js"></script>
   <script src="js/main.js"></script>
 </body>
 

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lavori | Yulia</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <nav>
+        <div class="container nav-container">
+            <div class="logo"><a href="index.html">Yulia.</a></div>
+            <div class="nav-links">
+                <a href="about.html">About</a>
+                <a href="fotografia.html">Fotografia</a>
+                <a href="lavori.html" style="color: var(--color-primary);">Lavori</a>
+                <a href="arte.html">Arte</a>
+                <a href="scrittura.html">Scrittura</a>
+                <a href="progetti.html">Progetti</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="container" style="margin-top: var(--spacing-lg);">
+        <div class="fade-in" style="text-align: center; margin-bottom: 4rem;">
+            <h1>I Miei Lavori</h1>
+            <p style="max-width: 600px; margin: 0 auto; color: var(--color-text-light);">
+                Catturo i momenti più importanti per renderli eterni.
+            </p>
+        </div>
+
+        <!-- Lauree Section -->
+        <div class="service-section fade-in">
+            <h2 style="text-align: center;">Lauree</h2>
+            <p class="service-description">
+                Il coronamento di un percorso, la gioia di un traguardo raggiunto. Racconto la tua laurea con scatti
+                spontanei ed eleganti.
+            </p>
+            <div class="magazine-grid"
+                style="grid-template-columns: repeat(3, 1fr); max-width: 1000px; margin-bottom: 4rem;">
+                <!-- Using placeholders from existing images or generic ones until user provides specific event photos -->
+                <div class="magazine-item" style="grid-column: span 1; grid-row: span 1; height: 250px;">
+                    <img src="images/instagram/post_1.jpg" loading="lazy" alt="Laurea 1">
+                </div>
+                <div class="magazine-item" style="grid-column: span 1; grid-row: span 1; height: 250px;">
+                    <img src="images/instagram/post_2.jpg" loading="lazy" alt="Laurea 2">
+                </div>
+                <div class="magazine-item" style="grid-column: span 1; grid-row: span 1; height: 250px;">
+                    <img src="images/instagram/post_6.jpg" loading="lazy" alt="Laurea 3">
+                </div>
+            </div>
+        </div>
+
+        <!-- Eventi Speciali Section -->
+        <div class="service-section fade-in">
+            <h2 style="text-align: center;">Eventi Speciali</h2>
+            <p class="service-description">
+                Dalle cerimonie alle ricorrenze uniche. Ogni dettaglio conta e merita di essere ricordato.
+            </p>
+            <div class="magazine-grid"
+                style="grid-template-columns: repeat(3, 1fr); max-width: 1000px; margin-bottom: 4rem;">
+                <div class="magazine-item" style="grid-column: span 2; grid-row: span 2; height: 500px;">
+                    <img src="images/instagram/post_3.jpg" loading="lazy" alt="Evento 1">
+                </div>
+                <div class="magazine-item" style="grid-column: span 1; grid-row: span 2; height: 500px;">
+                    <img src="images/instagram/post_4.jpg" loading="lazy" alt="Evento 2">
+                </div>
+            </div>
+        </div>
+
+        <!-- Feste Section -->
+        <div class="service-section fade-in">
+            <h2 style="text-align: center;">Feste</h2>
+            <p class="service-description">
+                Il divertimento, la musica, gli amici. L'atmosfera della festa catturata in ogni sfumatura.
+            </p>
+            <div class="magazine-grid" style="grid-template-columns: repeat(4, 1fr); max-width: 1000px;">
+                <div class="magazine-item" style="grid-column: span 2; height: 300px;">
+                    <img src="images/instagram/post_5.jpg" loading="lazy" alt="Festa 1">
+                </div>
+                <div class="magazine-item" style="grid-column: span 2; height: 300px;">
+                    <img src="images/instagram/post_1.jpg" loading="lazy" alt="Festa 2">
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Contact/Booking Section -->
+    <section class="contact-section fade-in" style="margin-top: 6rem;">
+        <div class="container">
+            <div class="contact-layout">
+                <div class="contact-text">
+                    <h2>Prenota un Servizio</h2>
+                    <p
+                        style="color: var(--color-text-light); font-size: 1.1rem; margin-bottom: 1.5rem; line-height: 1.8;">
+                        Vuoi prenotare uno shooting per la tua laurea, un evento o una festa?
+                        <br><br>
+                        Scrivimi per ricevere un preventivo o semplicemente per avere più informazioni.
+                    </p>
+                </div>
+
+                <!-- AJAX Form -->
+                <form id="booking-form" class="contact-form" action="https://formspree.io/f/xwvbkznd" method="POST">
+                    <div>
+                        <label for="email" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">La tua
+                            Email</label>
+                        <input type="email" id="email" name="email" placeholder="esempio@email.com" required>
+                    </div>
+                    <div>
+                        <label for="message"
+                            style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Messaggio</label>
+                        <textarea id="message" name="message" placeholder="Raccontami i dettagli..."
+                            required></textarea>
+                    </div>
+                    <div style="text-align: left;">
+                        <button type="submit" class="cta-button" style="border: none; cursor: pointer;">Invia
+                            Richiesta</button>
+                    </div>
+                    <p id="form-status" style="margin-top: 1rem; font-weight: 500;"></p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="year"></span> Yulia.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // AJAX Form Handling
+        var form = document.getElementById("booking-form");
+
+        async function handleSubmit(event) {
+            event.preventDefault();
+            var status = document.getElementById("form-status");
+            var data = new FormData(event.target);
+
+
+
+            fetch(event.target.action, {
+                method: form.method,
+                body: data,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    status.innerHTML = "Grazie! Il tuo messaggio è stato inviato.";
+                    status.style.color = "green";
+                    form.reset();
+                } else {
+                    response.json().then(data => {
+                        if (Object.hasOwn(data, 'errors')) {
+                            status.innerHTML = data["errors"].map(error => error["message"]).join(", ");
+                        } else {
+                            status.innerHTML = "Oops! C'è stato un problema nell'invio del modulo.";
+                        }
+                        status.style.color = "red";
+                    })
+                }
+            }).catch(error => {
+                status.innerHTML = "Oops! C'è stato un problema nell'invio del modulo.";
+                status.style.color = "red";
+            });
+        }
+        form.addEventListener("submit", handleSubmit);
+    </script>
+</body>
+
+</html>

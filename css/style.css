@@ -21,7 +21,8 @@
   --spacing-xs: 0.5rem;
   --spacing-sm: 1rem;
   --spacing-md: 2rem;
-  --spacing-lg: 4rem;
+  --spacing-lg: 7rem;
+  /* Increased from 4rem for header clearance */
   --spacing-xl: 8rem;
 
   /* UI Elements */
@@ -110,6 +111,8 @@ h1 {
 
 h2 {
   font-size: 2.5rem;
+  margin-top: 1rem;
+  /* Added spacing */
   margin-bottom: var(--spacing-md);
   position: relative;
   display: inline-block;
@@ -238,7 +241,7 @@ section {
   min-height: 90vh;
   /* Changed from fixed 100vh for mobile friendliness */
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   text-align: center;
   flex-direction: column;
@@ -494,5 +497,113 @@ footer {
   .nav-container {
     flex-direction: column;
     gap: var(--spacing-sm);
+  }
+}
+
+/* =========================================
+   8. MAGAZINE LAYOUT (Dense)
+   ========================================= */
+.magazine-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.magazine-header h2 {
+  margin-bottom: 0.5rem;
+}
+
+.magazine-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 220px;
+  /* Smaller height for compact look */
+  gap: 4px;
+  /* Tight gap */
+  max-width: 900px;
+  /* Constrained width for 'smaller' look */
+  margin: 0 auto;
+}
+
+.magazine-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0;
+  /* Sharp edges for magazine feel */
+}
+
+.magazine-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  display: block;
+}
+
+.magazine-item:hover {
+  z-index: 2;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.magazine-item:hover img {
+  transform: scale(1.05);
+}
+
+/* 
+  Layout Logic (4 Columns):
+  Row 1: [1 (2x2)] [2 (1x2)] [3 (1x1)]
+  Row 2: [1 (....)] [2 (....)] [4 (1x1)]
+  Row 3: [5 (2x1)] [6 (2x1)]
+*/
+
+.magazine-item:nth-child(1) {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.magazine-item:nth-child(2) {
+  grid-column: span 1;
+  grid-row: span 2;
+}
+
+.magazine-item:nth-child(3) {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+.magazine-item:nth-child(4) {
+  grid-column: span 1;
+  grid-row: span 1;
+  /* Placed automatically in next available slot (Row 2, Col 4) */
+}
+
+.magazine-item:nth-child(5) {
+  grid-column: span 2;
+  grid-row: span 1;
+}
+
+.magazine-item:nth-child(6) {
+  grid-column: span 2;
+  grid-row: span 1;
+}
+
+/* Mobile: Stacked */
+@media (max-width: 768px) {
+  .magazine-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 200px;
+  }
+
+  .magazine-item:nth-child(n) {
+    grid-column: span 1 !important;
+    grid-row: span 1 !important;
+  }
+
+  /* Make 1st item big on mobile too */
+  .magazine-item:nth-child(1) {
+    grid-column: span 2 !important;
+    grid-row: span 2 !important;
   }
 }
