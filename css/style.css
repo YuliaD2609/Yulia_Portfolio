@@ -1,4 +1,6 @@
-﻿/* =========================================
+﻿@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Inter:wght@300;400;600&family=Playfair+Display:wght@700&display=swap');
+
+/* =========================================
    1. VARIABLES & THEME SETUP
    ========================================= */
 :root {
@@ -13,8 +15,16 @@
   --color-surface: #ffffff;
 
   /* Typography */
-  --font-main: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  --font-serif: 'Playfair Display', serif;
+  --font-main: 'Inter',
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+  --font-serif: 'Playfair Display',
+    serif;
   /* For headings */
 
   /* Spacing */
@@ -689,3 +699,12 @@ footer {
   padding: 1rem;
   font-family: inherit;
 }
+ . l o g o   a   { 
+     f o n t - f a m i l y :   ' D a n c i n g   S c r i p t ' ,   c u r s i v e ; 
+     f o n t - s i z e :   2 r e m ; 
+     f o n t - w e i g h t :   6 0 0 ; 
+     t e x t - d e c o r a t i o n :   n o n e ; 
+     c o l o r :   v a r ( - - c o l o r - t e x t ) ; 
+     t r a n s i t i o n :   c o l o r   0 . 3 s   e a s e ; 
+ }  
+ 
