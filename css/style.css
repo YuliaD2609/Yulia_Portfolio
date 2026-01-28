@@ -680,8 +680,12 @@ footer {
     margin-bottom: var(--spacing-md);
   }
 }
+
 /* Contact Form Refinements */
 .contact-form textarea {
-  min-height: 150px;
+  min-height: 250px;
+  width: 100%;
   resize: none;
+  padding: 1rem;
+  font-family: inherit;
 }
