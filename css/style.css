@@ -607,3 +607,76 @@ footer {
     grid-row: span 2 !important;
   }
 }
+
+/* =========================================
+   9. SKILLS SECTION
+   ========================================= */
+.skills-container {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-md);
+}
+
+.skills-column {
+  flex: 1;
+  text-align: center;
+}
+
+.skills-column h4 {
+  margin-bottom: var(--spacing-md);
+  font-size: 1.5rem;
+  position: relative;
+  display: inline-block;
+}
+
+/* Vertical divider logic */
+.skills-column:first-child {
+  border-right: 1px solid var(--color-primary);
+  padding-right: var(--spacing-md);
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  gap: 20px;
+  justify-items: center;
+}
+
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  transition: transform 0.3s ease;
+}
+
+.skill-item:hover {
+  transform: translateY(-5px);
+  color: var(--color-primary);
+}
+
+.skill-item i {
+  font-size: 4.5rem;
+  color: var(--color-text);
+  margin-bottom: 5px;
+}
+
+.skill-item span {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .skills-container {
+    flex-direction: column;
+  }
+
+  .skills-column:first-child {
+    border-right: none;
+    border-bottom: 1px solid var(--color-primary);
+    padding-right: 0;
+    padding-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+  }
+}

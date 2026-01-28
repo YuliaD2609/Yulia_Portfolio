@@ -9,6 +9,7 @@
     href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@700&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.6.6/css/flag-icons.min.css" />
 </head>
 
 <body>
@@ -19,7 +20,7 @@
       <div class="nav-links">
         <a href="about.html">About</a>
         <a href="fotografia.html" style="color: var(--color-primary);">Fotografia</a>
-        <a href="lavori.html">Lavori</a>
+        <a href="eventi.html">Eventi</a>
         <a href="arte.html">Arte</a>
         <a href="scrittura.html">Scrittura</a>
         <a href="progetti.html">Progetti</a>
@@ -67,9 +68,74 @@
     </div>
   </section>
 
+  <!-- Viaggi Section -->
+  <section class="container">
+    <h2 style="text-align: center; margin-bottom: var(--spacing-lg);">Viaggi</h2>
+
+    <!-- Croazia -->
+    <div style="margin-bottom: var(--spacing-md);">
+      <h3 style="display: flex; align-items: center; gap: 10px; margin-bottom: 2rem;">
+        Croazia <span class="fi fi-hr" style="border-radius: 2px;"></span>
+      </h3>
+      <div class="gallery-grid">
+        <div class="gallery-item"><img src="images/foto1.jpg" alt="Croazia 1"></div>
+        <div class="gallery-item"><img src="images/foto2.jpg" alt="Croazia 2"></div>
+        <div class="gallery-item"><img src="images/arte1.jpg" alt="Croazia 3"></div>
+      </div>
+    </div>
+
+    <!-- Russia -->
+    <div style="margin-bottom: var(--spacing-md);">
+      <h3 style="display: flex; align-items: center; gap: 10px; margin-bottom: 2rem;">
+        Russia <span class="fi fi-ru" style="border-radius: 2px;"></span>
+      </h3>
+      <div class="gallery-grid">
+        <div class="gallery-item"><img src="images/foto1.jpg" alt="Russia 1"></div>
+        <div class="gallery-item"><img src="images/foto2.jpg" alt="Russia 2"></div>
+        <div class="gallery-item"><img src="images/arte1.jpg" alt="Russia 3"></div>
+      </div>
+    </div>
+
+    <!-- Spagna -->
+    <div style="margin-bottom: var(--spacing-md);">
+      <h3 style="display: flex; align-items: center; gap: 10px; margin-bottom: 2rem;">
+        Spagna <span class="fi fi-es" style="border-radius: 2px;"></span>
+      </h3>
+      <div class="gallery-grid">
+        <div class="gallery-item"><img src="images/foto1.jpg" alt="Spagna 1"></div>
+        <div class="gallery-item"><img src="images/foto2.jpg" alt="Spagna 2"></div>
+        <div class="gallery-item"><img src="images/arte1.jpg" alt="Spagna 3"></div>
+      </div>
+    </div>
+
+    <!-- Ungheria -->
+    <div style="margin-bottom: var(--spacing-md);">
+      <h3 style="display: flex; align-items: center; gap: 10px; margin-bottom: 2rem;">
+        Ungheria <span class="fi fi-hu" style="border-radius: 2px;"></span>
+      </h3>
+      <div class="gallery-grid">
+        <div class="gallery-item"><img src="images/foto1.jpg" alt="Ungheria 1"></div>
+        <div class="gallery-item"><img src="images/foto2.jpg" alt="Ungheria 2"></div>
+        <div class="gallery-item"><img src="images/arte1.jpg" alt="Ungheria 3"></div>
+      </div>
+    </div>
+
+    <!-- Italia -->
+    <div style="margin-bottom: var(--spacing-md);">
+      <h3 style="display: flex; align-items: center; gap: 10px; margin-bottom: 2rem;">
+        Italia <span class="fi fi-it" style="border-radius: 2px;"></span>
+      </h3>
+      <div class="gallery-grid">
+        <div class="gallery-item"><img src="images/foto1.jpg" alt="Italia 1"></div>
+        <div class="gallery-item"><img src="images/foto2.jpg" alt="Italia 2"></div>
+        <div class="gallery-item"><img src="images/arte1.jpg" alt="Italia 3"></div>
+      </div>
+    </div>
+  </section>
+
   <!-- Contact Section -->
-  <div class="contact-layout">
-    <div class="contact-text">
+  <div class="contact-layout" style="justify-content: flex-end; width: 100%; max-width: 1000px; margin-left: auto;">
+    <div class="contact-text" style="max-width: 400px; margin-right: 2rem;">
       <h2>Vuoi immortalare i tuoi ricordi?</h2>
       <p style="color: var(--color-text-light); font-size: 1.1rem; margin-bottom: 2rem; line-height: 1.8;">
         Se sei interessato a uno shooting fotografico, a una collaborazione o vuoi semplicemente chiedermi informazioni,
@@ -99,7 +165,8 @@
 
   <footer>
     <div class="container">
-      <p>&copy; <span id="year"></span> Yulia.</p>
+      <p>&copy; <span id="year"></span> Yulia. <br> <a href="mailto:yuliadashchuk26@gmail.com"
+          style="color: inherit;">yuliadashchuk26@gmail.com</a></p>
     </div>
   </footer>
 

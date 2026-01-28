@@ -10,6 +10,8 @@
     href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@700&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.6.6/css/flag-icons.min.css" />
   <style>
     .timeline {
       border-left: 2px solid var(--color-primary);
@@ -43,7 +45,7 @@
       <div class="nav-links">
         <a href="about.html" style="color: var(--color-primary);">About</a>
         <a href="fotografia.html">Fotografia</a>
-        <a href="lavori.html">Lavori</a>
+        <a href="eventi.html">Eventi</a>
         <a href="arte.html">Arte</a>
         <a href="scrittura.html">Scrittura</a>
         <a href="progetti.html">Progetti</a>
@@ -54,46 +56,213 @@
   <section class="container" style="margin-top: var(--spacing-lg);">
     <h1 class="fade-in">About Me</h1>
 
-    <div class="projects-grid" style="align-items: start;">
+    <div class="projects-grid" style="align-items: start; grid-template-columns: 1fr 2fr;">
 
       <div class="fade-in">
-        <img src="images/hero.jpg" alt="Yulia Profile"
-          style="width: 100%; height: auto; border-radius: var(--radius-md); box-shadow: var(--shadow-md);">
-      </div>
+        <img src="images/me.jpg" alt="Yulia Profile"
+          style="width: 100%; height: auto; border-radius: var(--radius-md); box-shadow: var(--shadow-md); margin-bottom: var(--spacing-md);">
 
-      <div class="fade-in">
-        <h2>La mia storia</h2>
-        <p style="margin-bottom: var(--spacing-sm);">
-          Sono Yulia, una creativa appassionata di tecnologia e arte. Credo fermamente che questi due mondi non siano
-          opposti, ma complementari.
-        </p>
-        <p style="margin-bottom: var(--spacing-md);">
-          Il mio percorso spazia dallo studio rigoroso alla libera espressione artistica. Amo catturare momenti
-          attraverso la fotografia, esplorare emozioni con la pittura e dare forma ai pensieri attraverso la scrittura.
-        </p>
+        <!-- Travels Preview (Moved here or below? Let's keep it simple and clean) -->
 
-        <h3>Percorso di Studi</h3>
-        <div class="timeline">
-          <div class="timeline-item">
-            <h4>Corso di Studi Attuale</h4>
-            <span style="color: var(--color-text-light);">202X - Presente</span>
-            <p>Descrizione del percorso di studi universitario o specialistico.</p>
+        <!-- Moved Skills Section -->
+        <h3 style="margin-top: var(--spacing-md); font-size: 1.5rem;">Competenze</h3>
+
+        <div class="skills-container" style="flex-direction: column; gap: 1rem;">
+          <!-- Hard Skills -->
+          <div class="skills-column"
+            style="border-right: none; border-bottom: 1px solid var(--color-primary); padding-bottom: 1rem; padding-right: 0;">
+            <h4 style="font-size: 1.2rem;">Hard Skills</h4>
+            <div class="skills-grid" style="grid-template-columns: repeat(4, 1fr); gap: 15px;">
+              <div class="skill-item">
+                <i class="fab fa-html5" style="color: #e34c26;"></i>
+                <span>HTML</span>
+              </div>
+              <div class="skill-item">
+                <i class="fab fa-css3-alt" style="color: #264de4;"></i>
+                <span>CSS</span>
+              </div>
+              <div class="skill-item">
+                <i class="fab fa-js" style="color: #f0db4f;"></i>
+                <span>JavaScript</span>
+              </div>
+              <div class="skill-item">
+                <i class="fab fa-java" style="color: #007396;"></i>
+                <span>Java</span>
+              </div>
+              <div class="skill-item">
+                <i class="fab fa-python" style="color: #3776ab;"></i>
+                <span>Python</span>
+              </div>
+              <div class="skill-item">
+                <i class="fas fa-database" style="color: #00758f;"></i>
+                <span>SQL</span>
+              </div>
+              <div class="skill-item">
+                <i class="fab fa-android" style="color: #3ddc84;"></i>
+                <span>Android</span>
+              </div>
+              <div class="skill-item">
+                <i class="fab fa-git-alt" style="color: #f05032;"></i>
+                <span>Git</span>
+              </div>
+            </div>
           </div>
-          <div class="timeline-item">
-            <h4>Diploma Superiore</h4>
-            <span style="color: var(--color-text-light);">201X - 202X</span>
-            <p>Specializzazione e competenze acquisite.</p>
+
+          <!-- Soft Skills -->
+          <div class="skills-column">
+            <h4 style="font-size: 1.2rem;">Soft Skills</h4>
+            <div class="skills-grid" style="grid-template-columns: repeat(3, 1fr); gap: 15px;">
+              <div class="skill-item">
+                <i class="fas fa-users" style="color: var(--color-primary);"></i>
+                <span style="font-size: 0.8rem;">Lavoro di gruppo</span>
+              </div>
+              <div class="skill-item">
+                <i class="fas fa-lightbulb" style="color: var(--color-primary);"></i>
+                <span style="font-size: 0.8rem;">Problem Solving</span>
+              </div>
+              <div class="skill-item">
+                <i class="fas fa-clock" style="color: var(--color-primary);"></i>
+                <span style="font-size: 0.8rem;">Gestione del tempo</span>
+              </div>
+              <div class="skill-item">
+                <i class="fas fa-comments" style="color: var(--color-primary);"></i>
+                <span style="font-size: 0.8rem;">Comunicazione</span>
+              </div>
+              <div class="skill-item">
+                <i class="fas fa-paint-brush" style="color: var(--color-primary);"></i>
+                <span style="font-size: 0.8rem;">Creatività</span>
+              </div>
+            </div>
           </div>
         </div>
+
+        <div style="margin-top: var(--spacing-md);">
+          <h4 style="font-size: 1.2rem; margin-bottom: 10px;">Lingue</h4>
+          <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+            <div
+              style="display: flex; align-items: center; gap: 5px; background: var(--color-secondary); padding: 5px 10px; border-radius: 20px;">
+              <span class="fi fi-it" style="font-size: 1.2rem; border-radius: 2px;"></span> <span>Italiano</span>
+            </div>
+            <div
+              style="display: flex; align-items: center; gap: 5px; background: var(--color-secondary); padding: 5px 10px; border-radius: 20px;">
+              <span class="fi fi-ru" style="font-size: 1.2rem; border-radius: 2px;"></span> <span>Russo</span>
+            </div>
+            <div
+              style="display: flex; align-items: center; gap: 5px; background: var(--color-secondary); padding: 5px 10px; border-radius: 20px;">
+              <span class="fi fi-gb" style="font-size: 1.2rem; border-radius: 2px;"></span> <span>Inglese (B2)</span>
+            </div>
+          </div>
+        </div>
+      </div> <!-- End Left Column -->
+
+      <div class="fade-in">
+        <h2>Chi Sono</h2>
+        <p style="margin-bottom: var(--spacing-sm);">
+          Sono Yulia, ho <span id="age">--</span> anni e sono appassionata di informatica
+          e di arte, nonostante questi mondi sembrino completamente opposti.
+        </p>
+        <p style="margin-bottom: var(--spacing-sm);">
+          Mi piace prendere l'iniziativa e vivere nuove esperienze impegnandomi per raggiungere i miei obiettivi.
+          Tendo a non fermarmi fino a che non ottengo i risultati che desidero, e combatto per ciò in cui credo.
+        </p>
+        <p style="margin-bottom: var(--spacing-md);">
+          Oltre allo studio, amo viaggiare, provare nuove cose e praticare sport. Mi piace immergermi nell'arte in
+          tutte
+          le sue forme e mi dedico alla produzione artistica con vari mezzi. Sono un'appassionata di lettura e
+          scrittura, partecipando a vari concorsi e vantando un'ampia biblioteca personale. </p>
+
+        <h3>Istruzione e Formazione</h3>
+        <div class="timeline">
+          <div class="timeline-item">
+            <h4>Laurea Magistrale in Data Science e Machine Learning</h4>
+            <span style="color: var(--color-text-light);">23/10/2025 – Attuale | Università degli Studi di
+              Salerno</span>
+            <p>Corso di Laurea Magistrale in Informatica.</p>
+          </div>
+          <div class="timeline-item">
+            <h4>Laurea Triennale in Informatica</h4>
+            <span style="color: var(--color-text-light);">2022 – 23/10/2025 | Università degli Studi di Salerno</span>
+            <p>Voto finale: 100L. <br>Tesi: Analisi dell’influenza della lingua nel riconoscimento dinamico delle
+              emozioni facciali mediante modello bidirezionale CNN-LSTM.</p>
+            <p style="font-size: 0.9rem; margin-top: 0.5rem;"><strong>Esami principali:</strong></p>
+            <ul style="list-style: disc; margin-left: 1.2rem; font-size: 0.9rem;">
+              <li>Machine learning (30/30): Competenze per addestrare modelli di ML.</li>
+              <li>Ingegneria del Software (29/30): Tecniche di creazione siti web e documentazione, lavoro di gruppo.
+              </li>
+              <li>Mobile programming (28/30): Creazione applicazioni Android complete.</li>
+            </ul>
+          </div>
+          <div class="timeline-item">
+            <h4>Diploma di Scuola Superiore</h4>
+            <span style="color: var(--color-text-light);">2017 – 2022 | Liceo Statale "Paolo Emilio Imbriani"
+              (Avellino)</span>
+            <p>Liceo Scientifico opzione Scienze Applicate. Voto finale: 100/100.</p>
+          </div>
+        </div>
+
+
+
+        <h3 style="margin-top: var(--spacing-md);">Progetti Accademici</h3>
+        <div class="writing-list"> <!-- Reusing generic list style -->
+          <div class="writing-item">
+            <h4>Far From Home</h4>
+            <p style="font-size: 0.9rem;">Applicazione mobile creata per il contest con eTuitus. App per fuorisede
+              sviluppata in Java e Android Studio.</p>
+            <a href="https://github.com/YuliaD2609/FarFromHome.git" target="_blank"
+              style="font-size: 0.8rem; color: var(--color-primary); font-weight: bold;">Vedi su GitHub &rarr;</a>
+          </div>
+          <div class="writing-item">
+            <h4>Happiness Report Analysis</h4>
+            <p style="font-size: 0.9rem;">Progetto di Machine Learning per l'analisi dei dati sulla felicità globale,
+              con addestramento e confronto di vari modelli, sostituendo l'analisi della cittadinanza.</p>
+            <a href="#" target="_blank" style="font-size: 0.8rem; color: var(--color-primary); font-weight: bold;">(Link
+              in arrivo) &rarr;</a>
+          </div>
+          <div class="writing-item">
+            <h4>Just in Time</h4>
+            <p style="font-size: 0.9rem;">WebApp di gioco di carte multigiocatore locale. Realizzato con Java, JS,
+              CSS,
+              HTML, Spring.</p>
+            <a href="https://github.com/LimeMoss/Progetto-JustInTime.git" target="_blank"
+              style="font-size: 0.8rem; color: var(--color-primary); font-weight: bold;">Vedi su GitHub &rarr;</a>
+          </div>
+          <div class="writing-item">
+            <h4>Learn Hub</h4>
+            <p style="font-size: 0.9rem;">Sito E-Commerce di corsi online. Realizzato con Java, JS, CSS, HTML.</p>
+            <a href="https://gitlab.com/g4660/tsw_progetti/tsw23_24/dashchuk-manzo_pj.git" target="_blank"
+              style="font-size: 0.8rem; color: var(--color-primary); font-weight: bold;">Vedi su GitLab &rarr;</a>
+          </div>
+        </div>
+
       </div>
 
+    </div>
+  </section>
+
+  <!-- Travels & Moments Section (Full Width Grid) -->
+  <section class="container fade-in" style="margin-top: var(--spacing-xl); margin-bottom: var(--spacing-xl);">
+    <div class="gallery-grid">
+      <!-- Using placeholders for now -->
+      <div class="gallery-item">
+        <img src="images/foto1.jpg" alt="Travel 1">
+      </div>
+      <div class="gallery-item">
+        <img src="images/foto2.jpg" alt="Travel 2">
+      </div>
+      <div class="gallery-item">
+        <img src="images/arte1.jpg" alt="Travel 3">
+      </div>
+      <div class="gallery-item">
+        <img src="images/progetto1.jpg" alt="Travel 4">
+      </div>
     </div>
   </section>
 
   <!-- Footer -->
   <footer>
     <div class="container">
-      <p>&copy; <span id="year"></span> Yulia.</p>
+      <p>&copy; <span id="year"></span> Yulia. <br> <a href="mailto:yuliadashchuk26@gmail.com"
+          style="color: inherit;">yuliadashchuk26@gmail.com</a></p>
     </div>
   </footer>
 
