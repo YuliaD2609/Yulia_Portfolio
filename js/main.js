@@ -123,7 +123,7 @@ async function initGithubProjects(limit = 4, containerId = 'github-projects') {
             // Skip forks or specific hidden repos
             if (repo.fork) return;
             // Filter out the portfolio itself if requested
-            if (repo.name.toLowerCase() === 'portfolio' || repo.name.toLowerCase() === 'yulia.github.io') return;
+            if (repo.name.toLowerCase().includes('portfolio') || repo.name.toLowerCase().includes('yulia.github.io')) return;
 
             const card = document.createElement('div');
             card.className = 'project-card fade-in visible'; // Added visible to show immediately
