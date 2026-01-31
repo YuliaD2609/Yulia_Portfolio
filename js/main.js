@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
         initGithubProjects(100, 'github-projects', true, false, featuredRepos);
     }
     if (document.getElementById('all-projects-container')) {
-        initGithubProjects(100, 'all-projects-container', false, true); // Progetti: fetch all, show all, include forks
+        initGithubProjects(100, 'all-projects-container', true, true); // Progetti: fetch all, show all, include forks, HIDDEN portfolio
     }
 
     // Initialize Instagram (functions internally checks for container existence)

@@ -42,7 +42,7 @@
   <nav>
     <div class="container nav-container">
       <div class="logo">
-        <img src="images/me.jpg" alt="Yulia Profile" class="nav-profile-img">
+        <a href="index.html"><img src="images/me.jpg" alt="Yulia Profile" class="nav-profile-img"></a>
         <a href="index.html">Yulia</a>
       </div>
       <div class="nav-links">
@@ -61,13 +61,12 @@
 
     <div class="projects-grid" style="align-items: start; grid-template-columns: 1fr 2fr;">
 
+      <!-- Left Column (Sidebar) -->
       <div class="fade-in">
         <img src="images/me.jpg" alt="Yulia Profile"
           style="width: 100%; height: auto; border-radius: var(--radius-md); box-shadow: var(--shadow-md); margin-bottom: var(--spacing-md);">
 
-        <!-- Travels Preview (Moved here or below? Let's keep it simple and clean) -->
-
-        <!-- Moved Skills Section -->
+        <!-- Skills Section -->
         <h3 style="margin-top: var(--spacing-md); font-size: 1.5rem;">Competenze</h3>
 
         <div class="skills-container" style="flex-direction: column; gap: 1rem;">
@@ -116,29 +115,30 @@
             <h4 style="font-size: 1.2rem;">Soft Skills</h4>
             <div class="skills-grid" style="grid-template-columns: repeat(3, 1fr); gap: 15px;">
               <div class="skill-item">
-                <i class="fas fa-users" style="color: var(--color-primary); font-size: 1.2rem;"></i>
+                <i class="fas fa-users" style="color: var(--color-primary); font-size: 2rem;"></i>
                 <span style="font-size: 0.8rem;">Lavoro di gruppo</span>
               </div>
               <div class="skill-item">
-                <i class="fas fa-lightbulb" style="color: var(--color-primary); font-size: 1.2rem;"></i>
+                <i class="fas fa-lightbulb" style="color: var(--color-primary); font-size: 2rem;"></i>
                 <span style="font-size: 0.8rem;">Problem Solving</span>
               </div>
               <div class="skill-item">
-                <i class="fas fa-clock" style="color: var(--color-primary); font-size: 1.2rem;"></i>
+                <i class="fas fa-clock" style="color: var(--color-primary); font-size: 2rem;"></i>
                 <span style="font-size: 0.8rem;">Gestione del tempo</span>
               </div>
               <div class="skill-item">
-                <i class="fas fa-comments" style="color: var(--color-primary); font-size: 1.2rem;"></i>
+                <i class="fas fa-comments" style="color: var(--color-primary); font-size: 2rem;"></i>
                 <span style="font-size: 0.8rem;">Comunicazione</span>
               </div>
               <div class="skill-item">
-                <i class="fas fa-paint-brush" style="color: var(--color-primary); font-size: 1.2rem;"></i>
+                <i class="fas fa-paint-brush" style="color: var(--color-primary); font-size: 2rem;"></i>
                 <span style="font-size: 0.8rem;">Creatività</span>
               </div>
             </div>
           </div>
         </div>
 
+        <!-- Languages Section (Inside Left Column) -->
         <div style="margin-top: var(--spacing-md);">
           <h4 style="font-size: 1.2rem; margin-bottom: 20px;">Lingue</h4>
           <div style="display: flex; gap: 20px; flex-wrap: wrap;">
@@ -181,11 +181,11 @@
                 <div style="width: 90%; height: 100%; background: #012169; border-radius: 3px;"></div>
               </div>
             </div>
-
           </div>
         </div>
       </div> <!-- End Left Column -->
 
+      <!-- Right Column (Main Content) -->
       <div class="fade-in">
         <h2>Chi Sono</h2>
         <p style="margin-bottom: var(--spacing-sm);">
@@ -197,7 +197,8 @@
           Tendo a non fermarmi fino a che non ottengo i risultati che desidero, e combatto per ciò in cui credo.
         </p>
         <p style="margin-bottom: var(--spacing-md);">
-          Oltre allo studio, amo viaggiare, provare nuove cose e praticare sport. Mi piace immergermi nell'arte in
+          Oltre alla passione per la conoscenza, amo viaggiare, provare nuove cose e praticare sport. Mi piace
+          immergermi nell'arte in
           tutte
           le sue forme e mi dedico alla produzione artistica con vari mezzi. Sono un'appassionata di lettura e
           scrittura, partecipando a vari concorsi e vantando un'ampia biblioteca personale. </p>
@@ -231,20 +232,18 @@
           </div>
         </div>
 
-
-
+        <!-- Projects Section (Inside Right Column) -->
         <h3 style="margin-top: var(--spacing-md);">Visualizza i miei progetti</h3>
         <div style="display: flex; gap: 1rem; margin-top: var(--spacing-sm); flex-wrap: wrap;">
           <a href="https://github.com/YuliaD2609" target="_blank" class="cta-button"
-            style="display: inline-flex; align-items: center; gap: 10px;">
+            style="display: inline-flex; align-items: center; gap: 10px; margin-top: 0;">
             <i class="fab fa-github"></i> Il mio GitHub
           </a>
-          <a href="progetti.html" class="cta-button secondary" style="margin-left: 0;">
+          <a href="progetti.html" class="cta-button secondary" style="margin-left: 0; margin-top: 0;">
             Vai ai Progetti &rarr;
           </a>
         </div>
-
-      </div>
+      </div> <!-- End Right Column -->
 
     </div>
   </section>
@@ -252,18 +251,15 @@
   <!-- Travels & Moments Section (Full Width Grid) -->
   <section class="container fade-in" style="margin-top: var(--spacing-xl); margin-bottom: var(--spacing-xl);">
     <div class="gallery-grid">
-      <!-- Using placeholders for now -->
+      <!-- Using me images -->
       <div class="gallery-item">
-        <img src="images/foto1.jpg" alt="Travel 1">
+        <img src="images/me/me0.jpg.jpg" alt="Me 1">
       </div>
       <div class="gallery-item">
-        <img src="images/foto2.jpg" alt="Travel 2">
+        <img src="images/me/me1.jpg.jpg" alt="Me 2">
       </div>
       <div class="gallery-item">
-        <img src="images/arte1.jpg" alt="Travel 3">
-      </div>
-      <div class="gallery-item">
-        <img src="images/progetto1.jpg" alt="Travel 4">
+        <img src="images/me/me2.jpg.jpg" alt="Me 3">
       </div>
     </div>
   </section>
