@@ -41,10 +41,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Check which projects container exists
     if (document.getElementById('github-projects')) {
-        initGithubProjects(4, 'github-projects'); // Home page: limit 4
+        // Home: specific projects only
+        const featuredRepos = ['FarFromHome', 'SecureNotes', 'World_happiness_report'];
+        initGithubProjects(100, 'github-projects', true, false, featuredRepos);
     }
     if (document.getElementById('all-projects-container')) {
-        initGithubProjects(100, 'all-projects-container'); // Progetti page: fetch all (limit 100)
+        initGithubProjects(100, 'all-projects-container', false, true); // Progetti: fetch all, show all, include forks
     }
 
     // Initialize Instagram (functions internally checks for container existence)
@@ -97,13 +99,14 @@ function initScrollAnimations() {
 /* =========================================
    GITHUB PROJECTS
    ========================================= */
-async function initGithubProjects(limit = 4, containerId = 'github-projects') {
+async function initGithubProjects(limit = 4, containerId = 'github-projects', hidePortfolio = true, includeForks = false, specificRepos = []) {
     const projectsContainer = document.getElementById(containerId);
     if (!projectsContainer) return;
 
     const username = 'YuliaD2609';
-    // Fetch more if needed, default to sorting by updated
-    const apiUrl = `https://api.github.com/users/${username}/repos?sort=updated&per_page=${limit}`;
+    // Fetch more if filtering for specific repos to ensure we find them
+    const perPage = specificRepos.length > 0 ? 100 : limit;
+    const apiUrl = `https://api.github.com/users/${username}/repos?sort=updated&per_page=${perPage}`;
 
     try {
         const response = await fetch(apiUrl);
@@ -120,10 +123,29 @@ async function initGithubProjects(limit = 4, containerId = 'github-projects') {
         }
 
         repos.forEach(repo => {
-            // Skip forks or specific hidden repos
-            if (repo.fork) return;
-            // Filter out the portfolio itself if requested
-            if (repo.name.toLowerCase().includes('portfolio') || repo.name.toLowerCase().includes('yulia.github.io')) return;
+            // Skip forks unless requested
+            if (repo.fork && !includeForks) return;
+            // Filter out the portfolio itself IF requested (default true)
+            // But user said: "in the project page there should be ALL the projects ... without the portfolio" 
+            // WAIT - re-reading request: "without the portfolio". 
+            // OK, user said "ALL the projects (without a fixed number) without the portfolio".
+            // So removing the portfolio filter is NOT what was asked? 
+            // "Also in the project page there should be ALL the projects (without a fixed number) without the portfolio"
+            // This implies: Show ALL projects, BUT EXCLUDE the portfolio repo. 
+
+            // So logic should be: Always exclude portfolio. 
+            // My previous interpretation was wrong. I will keep the filter.
+            // If specificRepos list is provided, filter by it
+            if (specificRepos.length > 0) {
+                // Check if this repo is in the specificRepos list (case insensitive check recommended)
+                const lowerName = repo.name.toLowerCase();
+                // Assuming specificRepos are provided with correct capitalization or we check loosely
+                const isFeatured = specificRepos.some(name => name.toLowerCase() === lowerName);
+                if (!isFeatured) return;
+            }
+
+            // Filter out the portfolio itself IF requested (default true)
+            if (hidePortfolio && (repo.name.toLowerCase().includes('portfolio') || repo.name.toLowerCase().includes('yulia.github.io'))) return;
 
             const card = document.createElement('div');
             card.className = 'project-card fade-in visible'; // Added visible to show immediately
@@ -132,7 +154,7 @@ async function initGithubProjects(limit = 4, containerId = 'github-projects') {
                 <h3>${repo.name}</h3>
                 <p>${repo.description || 'No description available for this cool project.'}</p>
                 <div style="margin-top: 1rem;">
-                    <a href="${repo.html_url}" target="_blank" style="color: var(--color-primary); font-weight: bold;">View Code &rarr;</a>
+                    <a href="${repo.html_url}" target="_blank" style="color: var(--color-primary); font-weight: bold;">Visualizza il progetto &rarr;</a>
                 </div>
             `;
 

@@ -41,7 +41,10 @@
 
   <nav>
     <div class="container nav-container">
-      <div class="logo"><a href="index.html">Yulia</a></div>
+      <div class="logo">
+        <img src="images/me.jpg" alt="Yulia Profile" class="nav-profile-img">
+        <a href="index.html">Yulia</a>
+      </div>
       <div class="nav-links">
         <a href="about.html" style="color: var(--color-primary);">About</a>
         <a href="fotografia.html">Fotografia</a>
@@ -113,23 +116,23 @@
             <h4 style="font-size: 1.2rem;">Soft Skills</h4>
             <div class="skills-grid" style="grid-template-columns: repeat(3, 1fr); gap: 15px;">
               <div class="skill-item">
-                <i class="fas fa-users" style="color: var(--color-primary);"></i>
+                <i class="fas fa-users" style="color: var(--color-primary); font-size: 1.2rem;"></i>
                 <span style="font-size: 0.8rem;">Lavoro di gruppo</span>
               </div>
               <div class="skill-item">
-                <i class="fas fa-lightbulb" style="color: var(--color-primary);"></i>
+                <i class="fas fa-lightbulb" style="color: var(--color-primary); font-size: 1.2rem;"></i>
                 <span style="font-size: 0.8rem;">Problem Solving</span>
               </div>
               <div class="skill-item">
-                <i class="fas fa-clock" style="color: var(--color-primary);"></i>
+                <i class="fas fa-clock" style="color: var(--color-primary); font-size: 1.2rem;"></i>
                 <span style="font-size: 0.8rem;">Gestione del tempo</span>
               </div>
               <div class="skill-item">
-                <i class="fas fa-comments" style="color: var(--color-primary);"></i>
+                <i class="fas fa-comments" style="color: var(--color-primary); font-size: 1.2rem;"></i>
                 <span style="font-size: 0.8rem;">Comunicazione</span>
               </div>
               <div class="skill-item">
-                <i class="fas fa-paint-brush" style="color: var(--color-primary);"></i>
+                <i class="fas fa-paint-brush" style="color: var(--color-primary); font-size: 1.2rem;"></i>
                 <span style="font-size: 0.8rem;">Creatività</span>
               </div>
             </div>
@@ -137,20 +140,48 @@
         </div>
 
         <div style="margin-top: var(--spacing-md);">
-          <h4 style="font-size: 1.2rem; margin-bottom: 10px;">Lingue</h4>
-          <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-            <div
-              style="display: flex; align-items: center; gap: 5px; background: var(--color-secondary); padding: 5px 10px; border-radius: 20px;">
-              <span class="fi fi-it" style="font-size: 1.2rem; border-radius: 2px;"></span> <span>Italiano</span>
+          <h4 style="font-size: 1.2rem; margin-bottom: 20px;">Lingue</h4>
+          <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+
+            <!-- Italiano -->
+            <div class="language-card fade-in"
+              style="background: white; padding: 15px; border-radius: 12px; box-shadow: var(--shadow-sm); border-left: 4px solid #009246; flex: 1; min-width: 140px; transition: transform 0.3s ease;">
+              <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 5px;">
+                <span class="fi fi-it" style="font-size: 1.5rem; border-radius: 4px;"></span>
+                <h5 style="margin: 0; font-size: 1rem;">Italiano</h5>
+              </div>
+              <p style="font-size: 0.8rem; color: var(--color-text-light); margin: 0;">Madrelingua 🍕</p>
+              <div style="width: 100%; height: 6px; background: #eee; margin-top: 10px; border-radius: 3px;">
+                <div style="width: 100%; height: 100%; background: #009246; border-radius: 3px;"></div>
+              </div>
             </div>
-            <div
-              style="display: flex; align-items: center; gap: 5px; background: var(--color-secondary); padding: 5px 10px; border-radius: 20px;">
-              <span class="fi fi-ru" style="font-size: 1.2rem; border-radius: 2px;"></span> <span>Russo</span>
+
+            <!-- Russo -->
+            <div class="language-card fade-in"
+              style="background: white; padding: 15px; border-radius: 12px; box-shadow: var(--shadow-sm); border-left: 4px solid #0039A6; flex: 1; min-width: 140px; transition: transform 0.3s ease;">
+              <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 5px;">
+                <span class="fi fi-ru" style="font-size: 1.5rem; border-radius: 4px;"></span>
+                <h5 style="margin: 0; font-size: 1rem;">Russo</h5>
+              </div>
+              <p style="font-size: 0.8rem; color: var(--color-text-light); margin: 0;">Madrelingua 🐻</p>
+              <div style="width: 100%; height: 6px; background: #eee; margin-top: 10px; border-radius: 3px;">
+                <div style="width: 100%; height: 100%; background: #DA291C; border-radius: 3px;"></div>
+              </div>
             </div>
-            <div
-              style="display: flex; align-items: center; gap: 5px; background: var(--color-secondary); padding: 5px 10px; border-radius: 20px;">
-              <span class="fi fi-gb" style="font-size: 1.2rem; border-radius: 2px;"></span> <span>Inglese</span>
+
+            <!-- Inglese -->
+            <div class="language-card fade-in"
+              style="background: white; padding: 15px; border-radius: 12px; box-shadow: var(--shadow-sm); border-left: 4px solid #C8102E; flex: 1; min-width: 140px; transition: transform 0.3s ease;">
+              <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 5px;">
+                <span class="fi fi-gb" style="font-size: 1.5rem; border-radius: 4px;"></span>
+                <h5 style="margin: 0; font-size: 1rem;">Inglese</h5>
+              </div>
+              <p style="font-size: 0.8rem; color: var(--color-text-light); margin: 0;">Fluente ☕</p>
+              <div style="width: 100%; height: 6px; background: #eee; margin-top: 10px; border-radius: 3px;">
+                <div style="width: 90%; height: 100%; background: #012169; border-radius: 3px;"></div>
+              </div>
             </div>
+
           </div>
         </div>
       </div> <!-- End Left Column -->
@@ -202,37 +233,15 @@
 
 
 
-        <h3 style="margin-top: var(--spacing-md);">Progetti Accademici</h3>
-        <div class="writing-list"> <!-- Reusing generic list style -->
-          <div class="writing-item">
-            <h4>Far From Home</h4>
-            <p style="font-size: 0.9rem;">Applicazione mobile creata per il contest con eTuitus. App per fuorisede
-              sviluppata in Java e Android Studio.</p>
-            <a href="https://github.com/YuliaD2609/FarFromHome.git" target="_blank"
-              style="font-size: 0.8rem; color: var(--color-primary); font-weight: bold;">Vedi su GitHub &rarr;</a>
-          </div>
-          <div class="writing-item">
-            <h4>Happiness Report Analysis</h4>
-            <p style="font-size: 0.9rem;">Progetto di Statistica e analisi dei dati per l'analisi dei dati sulla
-              felicità globale,
-              con addestramento e confronto di vari modelli.</p>
-            <a href="https://github.com/YuliaD2609/World_happiness_report.git" target="_blank"
-              style="font-size: 0.8rem; color: var(--color-primary); font-weight: bold;">Vedi su GitHub &rarr;</a>
-          </div>
-          <div class="writing-item">
-            <h4>Just in Time</h4>
-            <p style="font-size: 0.9rem;">WebApp di gioco di carte multigiocatore locale. Realizzato con Java, JS,
-              CSS,
-              HTML, Spring.</p>
-            <a href="https://github.com/LimeMoss/Progetto-JustInTime.git" target="_blank"
-              style="font-size: 0.8rem; color: var(--color-primary); font-weight: bold;">Vedi su GitHub &rarr;</a>
-          </div>
-          <div class="writing-item">
-            <h4>Learn Hub</h4>
-            <p style="font-size: 0.9rem;">Sito E-Commerce di corsi online. Realizzato con Java, JS, CSS, HTML.</p>
-            <a href="https://gitlab.com/g4660/tsw_progetti/tsw23_24/dashchuk-manzo_pj.git" target="_blank"
-              style="font-size: 0.8rem; color: var(--color-primary); font-weight: bold;">Vedi su GitLab &rarr;</a>
-          </div>
+        <h3 style="margin-top: var(--spacing-md);">Visualizza i miei progetti</h3>
+        <div style="display: flex; gap: 1rem; margin-top: var(--spacing-sm); flex-wrap: wrap;">
+          <a href="https://github.com/YuliaD2609" target="_blank" class="cta-button"
+            style="display: inline-flex; align-items: center; gap: 10px;">
+            <i class="fab fa-github"></i> Il mio GitHub
+          </a>
+          <a href="progetti.html" class="cta-button secondary" style="margin-left: 0;">
+            Vai ai Progetti &rarr;
+          </a>
         </div>
 
       </div>
@@ -264,6 +273,11 @@
     <div class="container">
       <p>&copy; <span id="year"></span> Yulia. <br> <a href="mailto:yuliadashchuk26@gmail.com"
           style="color: inherit;">yuliadashchuk26@gmail.com</a></p>
+      <div style="margin-top: var(--spacing-xs);">
+        <a href="https://github.com/YuliaD2609" target="_blank" style="margin: 0 10px;">GitHub</a>
+        <a href="https://www.instagram.com/yulia__photography/" target="_blank" style="margin: 0 10px;">Instagram</a>
+        <a href="https://www.linkedin.com/in/yulia-dashchuk" target="_blank" style="margin: 0 10px;">LinkedIn</a>
+      </div>
     </div>
   </footer>
 

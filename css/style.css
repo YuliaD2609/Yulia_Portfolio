@@ -269,6 +269,8 @@ section {
   /* Center vertically */
   justify-content: center;
   padding-top: var(--spacing-lg);
+  padding-bottom: var(--spacing-md);
+  /* Reduce bottom space specifically for hero */
 }
 
 .hero .container {
@@ -346,6 +348,25 @@ section {
 }
 
 /* Projects Grid & Cards */
+/* Projects Grid & Cards */
+#progetti {
+  padding-top: var(--spacing-md);
+  margin-top: var(--spacing-sm);
+  position: relative;
+}
+
+#progetti::before {
+  content: "";
+  display: block;
+  width: 150px;
+  /* Constrained width */
+  height: 3px;
+  background-color: var(--color-primary);
+  /* Palette color */
+  margin: 0 auto var(--spacing-md) auto;
+  border-radius: 2px;
+}
+
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
