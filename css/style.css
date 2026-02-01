@@ -407,6 +407,10 @@ section {
   opacity: 1;
 }
 
+#explore {
+  padding-top: var(--spacing-md);
+}
+
 /* Gallery Items */
 .gallery-grid {
   display: grid;
