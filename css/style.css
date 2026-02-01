@@ -696,7 +696,7 @@ footer {
 
 .skills-column {
   flex: 1;
-  text-align: center;
+  text-align: left;
 }
 
 .skills-column h4 {
