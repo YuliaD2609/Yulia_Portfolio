@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Check which projects container exists
     if (document.getElementById('github-projects')) {
         // Home: specific projects only
-        const featuredRepos = ['FarFromHome', 'SecureNotes', 'World_happiness_report'];
+        const featuredRepos = ['FarFromHome', 'SecureNotes', 'Clock'];
         initGithubProjects(100, 'github-projects', true, false, featuredRepos);
     }
     if (document.getElementById('all-projects-container')) {
@@ -129,8 +129,6 @@ async function initGithubProjects(limit = 4, containerId = 'github-projects', hi
             // But user said: "in the project page there should be ALL the projects ... without the portfolio" 
             // WAIT - re-reading request: "without the portfolio". 
             // OK, user said "ALL the projects (without a fixed number) without the portfolio".
-            // So removing the portfolio filter is NOT what was asked? 
-            // "Also in the project page there should be ALL the projects (without a fixed number) without the portfolio"
             // This implies: Show ALL projects, BUT EXCLUDE the portfolio repo. 
 
             // So logic should be: Always exclude portfolio. 
