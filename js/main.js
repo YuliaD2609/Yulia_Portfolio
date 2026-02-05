@@ -38,6 +38,7 @@ function filterGallery(category) {
 document.addEventListener('DOMContentLoaded', () => {
     initScrollAnimations();
     initDynamicAge();
+    initBirthdayBanner();
 
     // Check which projects container exists
     if (document.getElementById('github-projects')) {
@@ -170,4 +171,52 @@ function updateCopyrightYear() {
     if (yearSpan) {
         yearSpan.textContent = new Date().getFullYear();
     }
+}
+
+/* =========================================
+   11. BIRTHDAY BANNER LOGIC
+   ========================================= */
+function initBirthdayBanner() {
+    const banner = document.getElementById('birthday-banner');
+    const modal = document.getElementById('birthday-modal');
+    const openBtn = document.getElementById('open-wish-modal');
+    const closeBtn = document.getElementById('close-modal');
+
+    // Safety check
+    if (!banner || !modal || !openBtn || !closeBtn) return;
+
+    // Date check: September 26th
+    const today = new Date();
+    // September is month index 8 (0-11)
+    const isBirthday = (today.getMonth() === 8 && today.getDate() === 26);
+
+    // DEBUG: Uncomment to force show styling
+    // const isBirthday = true; 
+
+    if (isBirthday) {
+        // Show banner after a slight delay
+        setTimeout(() => {
+            banner.classList.remove('hidden');
+        }, 1000);
+    }
+
+    // Modal Events
+    openBtn.addEventListener('click', (e) => {
+        // Prevent default if it's an anchor, though it's a span usually
+        e.preventDefault();
+        modal.classList.remove('hidden');
+    });
+
+
+    // Close on X click
+    closeBtn.addEventListener('click', () => {
+        modal.classList.add('hidden');
+    });
+
+    // Close on click outside modal content
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.classList.add('hidden');
+        }
+    });
 }

@@ -133,6 +133,38 @@
         </div>
     </footer>
 
+    <!-- Birthday Banner (Hidden by default) -->
+    <div id="birthday-banner" class="birthday-banner hidden">
+        <div class="banner-content">
+            <span class="confetti-icon">🎉</span>
+            <p>It's my birthday! <span id="open-wish-modal" class="clickable-link">Click here</span> to wish me happy
+                birthday!</p>
+        </div>
+    </div>
+
+    <!-- Birthday Wish Modal -->
+    <div id="birthday-modal" class="modal hidden">
+        <div class="modal-content fade-in">
+            <span id="close-modal" class="close-btn">&times;</span>
+            <div class="modal-header">
+                <h2>Make a Wish! 🎂</h2>
+                <p>Grazie per il pensiero! Scrivimi un messaggio.</p>
+            </div>
+
+            <form class="contact-form" action="https://formspree.io/f/xwvbkznd" method="POST">
+                <div class="form-group">
+                    <label for="wisher-email">La tua Email</label>
+                    <input type="email" id="wisher-email" name="email" placeholder="esempio@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="wish-message">Il tuo augurio</label>
+                    <textarea id="wish-message" name="message" placeholder="Tanti auguri Yulia!..." required></textarea>
+                </div>
+                <button type="submit" class="cta-button">Invia Auguri 🎉</button>
+            </form>
+        </div>
+    </div>
+
     <!-- Scripts -->
     <script src="js/main.js"></script>
 </body>
