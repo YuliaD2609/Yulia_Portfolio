@@ -42,12 +42,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Check which projects container exists
     if (document.getElementById('github-projects')) {
-        // Home: specific projects only
+        // Home page: show only specific featured repos (fetched fresh every page load)
         const featuredRepos = ['FarFromHome', 'SecureNotes', 'Clock'];
-        initGithubProjects(100, 'github-projects', true, false, featuredRepos);
+        initGithubProjects(3, 'github-projects', true, false, featuredRepos);
     }
     if (document.getElementById('all-projects-container')) {
-        initGithubProjects(100, 'all-projects-container', true, true); // Progetti: fetch all, show all, include forks, HIDDEN portfolio
+        // Progetti page: fetch ALL repos fresh, no limit, exclude portfolio repos
+        initGithubProjects(0, 'all-projects-container', true, true);
     }
 
     // Initialize Instagram (functions internally checks for container existence)
@@ -100,69 +101,128 @@ function initScrollAnimations() {
 /* =========================================
    GITHUB PROJECTS
    ========================================= */
+
+// Language color map for badges
+const LANG_COLORS = {
+    'JavaScript': '#f1e05a',
+    'TypeScript': '#3178c6',
+    'Python': '#3572A5',
+    'Java': '#b07219',
+    'HTML': '#e34c26',
+    'CSS': '#563d7c',
+    'R': '#198CE7',
+    'C': '#555555',
+    'C++': '#f34b7d',
+    'C#': '#178600',
+    'Shell': '#89e051',
+    'default': '#8b949e'
+};
+
+/**
+ * Fetches ALL repos for a user, handling GitHub API pagination automatically.
+ * Returns a flat array of all repo objects.
+ */
+async function fetchAllGithubRepos(username) {
+    const allRepos = [];
+    let page = 1;
+    const perPage = 100; // GitHub's maximum per page
+
+    while (true) {
+        const url = `https://api.github.com/users/${username}/repos?sort=updated&per_page=${perPage}&page=${page}`;
+        const response = await fetch(url);
+        if (!response.ok) throw new Error(`GitHub API Error: ${response.status}`);
+
+        const repos = await response.json();
+        allRepos.push(...repos);
+
+        // If we got fewer results than the page size, we've reached the last page
+        if (repos.length < perPage) break;
+        page++;
+    }
+
+    return allRepos;
+}
+
 async function initGithubProjects(limit = 4, containerId = 'github-projects', hidePortfolio = true, includeForks = false, specificRepos = []) {
     const projectsContainer = document.getElementById(containerId);
     if (!projectsContainer) return;
 
     const username = 'YuliaD2609';
-    // Fetch more if filtering for specific repos to ensure we find them
-    const perPage = specificRepos.length > 0 ? 100 : limit;
-    const apiUrl = `https://api.github.com/users/${username}/repos?sort=updated&per_page=${perPage}`;
 
     try {
-        const response = await fetch(apiUrl);
-        if (!response.ok) throw new Error('GitHub API Error');
-
-        const repos = await response.json();
+        // Fetch ALL repos using pagination (auto-runs every time the page loads)
+        const allRepos = await fetchAllGithubRepos(username);
 
         // Clear loading state
         projectsContainer.innerHTML = '';
 
-        if (repos.length === 0) {
+        if (allRepos.length === 0) {
             projectsContainer.innerHTML = '<p>Nessun progetto trovato.</p>';
             return;
         }
 
-        repos.forEach(repo => {
+        let displayed = 0;
+
+        allRepos.forEach(repo => {
             // Skip forks unless requested
             if (repo.fork && !includeForks) return;
-            // Filter out the portfolio itself IF requested (default true)
-            // But user said: "in the project page there should be ALL the projects ... without the portfolio" 
-            // WAIT - re-reading request: "without the portfolio". 
-            // OK, user said "ALL the projects (without a fixed number) without the portfolio".
-            // This implies: Show ALL projects, BUT EXCLUDE the portfolio repo. 
 
-            // So logic should be: Always exclude portfolio. 
-            // My previous interpretation was wrong. I will keep the filter.
-            // If specificRepos list is provided, filter by it
+            // Filter out portfolio/site repos if requested
+            if (hidePortfolio && (
+                repo.name.toLowerCase().includes('portfolio') ||
+                repo.name.toLowerCase().includes('yulia.github.io')
+            )) return;
+
+            // If a specific list is given, only show those repos
             if (specificRepos.length > 0) {
-                // Check if this repo is in the specificRepos list (case insensitive check recommended)
-                const lowerName = repo.name.toLowerCase();
-                // Assuming specificRepos are provided with correct capitalization or we check loosely
-                const isFeatured = specificRepos.some(name => name.toLowerCase() === lowerName);
+                const isFeatured = specificRepos.some(name => name.toLowerCase() === repo.name.toLowerCase());
                 if (!isFeatured) return;
             }
 
-            // Filter out the portfolio itself IF requested (default true)
-            if (hidePortfolio && (repo.name.toLowerCase().includes('portfolio') || repo.name.toLowerCase().includes('yulia.github.io'))) return;
+            // Respect the limit (0 = no limit)
+            if (limit > 0 && displayed >= limit) return;
+
+            const langColor = LANG_COLORS[repo.language] || LANG_COLORS['default'];
+            const langBadge = repo.language
+                ? `<span style="display:inline-flex;align-items:center;gap:5px;font-size:0.78rem;color:var(--color-text-light);">
+                       <span style="width:10px;height:10px;border-radius:50%;background:${langColor};display:inline-block;flex-shrink:0;"></span>
+                       ${repo.language}
+                   </span>`
+                : '';
+
+
+
+            const starCount = repo.stargazers_count > 0
+                ? `<span style="font-size:0.78rem;color:var(--color-text-light);">⭐ ${repo.stargazers_count}</span>`
+                : '';
 
             const card = document.createElement('div');
-            card.className = 'project-card fade-in visible'; // Added visible to show immediately
+            card.className = 'project-card fade-in visible';
+            card.style.cssText = 'display:flex;flex-direction:column;';
 
             card.innerHTML = `
-                <h3>${repo.name}</h3>
-                <p>${repo.description || 'No description available for this cool project.'}</p>
-                <div style="margin-top: 1rem;">
-                    <a href="${repo.html_url}" target="_blank" style="color: var(--color-primary); font-weight: bold;">Visualizza il progetto &rarr;</a>
+                <h3 style="margin:0 0 0.5rem;">${repo.name}</h3>
+                <p style="flex:1;margin:0 0 1rem;">${repo.description || 'Nessuna descrizione disponibile.'}</p>
+                <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-top:auto;">
+                    <div style="display:flex;align-items:center;gap:10px;">
+                        ${langBadge}
+                        ${starCount}
+                    </div>
+                    <a href="${repo.html_url}" target="_blank" style="color:var(--color-primary);font-weight:bold;white-space:nowrap;">Visualizza &rarr;</a>
                 </div>
             `;
 
             projectsContainer.appendChild(card);
+            displayed++;
         });
 
+        if (displayed === 0) {
+            projectsContainer.innerHTML = '<p>Nessun progetto trovato.</p>';
+        }
+
     } catch (error) {
-        console.error('Error fetching repos:', error);
-        projectsContainer.innerHTML = '<p>Unable to load projects at the moment.</p>';
+        console.error('Error fetching GitHub repos:', error);
+        projectsContainer.innerHTML = '<p>Impossibile caricare i progetti in questo momento.</p>';
     }
 }
 
