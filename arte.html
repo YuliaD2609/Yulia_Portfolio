@@ -65,7 +65,7 @@
 
     <!-- Filters -->
     <div class="filters fade-in">
-      <button class="filter-btn active" onclick="filterGallery('all')">Tutti</button>
+      <button class="filter-btn active" onclick="filterGallery('disegno')">Disegno</button>
       <button class="filter-btn" onclick="filterGallery('painting')">Pittura</button>
       <button class="filter-btn" onclick="filterGallery('bnw')">Bianco e Nero</button>
       <button class="filter-btn" onclick="filterGallery('unconventional')">Mixed media</button>
@@ -77,25 +77,33 @@
 
       <!-- Painting -->
       <div class="gallery-item" data-category="painting">
-        <img src="images/arte1.jpg" alt="Pittura 1">
+        <img src="images/art/pittura1.jpg" alt="Pittura 1">
+      </div>
+
+      <div class="gallery-item" data-category="painting">
+        <img src="images/art/pittura2.jpg" alt="Pittura 2">
       </div>
 
       <!-- B&W -->
       <div class="gallery-item" data-category="bnw">
-        <img src="images/foto1.jpg" alt="Bianco e Nero Placeholder" style="filter: grayscale(100%);">
+        <img src="images/art/bn1.jpg" alt="Bianco e Nero 1" style="object-position: center 50%;">
+      </div>
+
+      <div class="gallery-item" data-category="bnw">
+        <img src="images/art/bn2.jpg" alt="Bianco e Nero 2" style="object-position: center 50%;">
       </div>
 
       <!-- Unconventional -->
       <div class="gallery-item" data-category="unconventional">
         <div
           style="width: 100%; height: 100%; background: #e0e0e0; display: flex; align-items: center; justify-content: center; padding: 20px; text-align: center;">
-          <p>Installazione Mixed Media</p>
+          <p>Unconventional Media</p>
         </div>
       </div>
 
-      <!-- More Items ... -->
-      <div class="gallery-item" data-category="painting">
-        <div style="width: 100%; height: 100%; background: #d4a373;"></div>
+      <!-- Disegno -->
+      <div class="gallery-item" data-category="disegno">
+        <img src="images/art/disegno1.jpg" alt="Disegno 1">
       </div>
 
     </div>
@@ -115,6 +123,9 @@
 
   <script src="js/gallery.js"></script>
   <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => { filterGallery('disegno'); });
+  </script>
 </body>
 
 </html>

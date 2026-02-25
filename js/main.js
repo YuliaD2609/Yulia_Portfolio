@@ -21,6 +21,7 @@ function filterGallery(category) {
         if (category === 'painting' && btn.innerText === 'Pittura') btn.classList.add('active');
         if (category === 'bnw' && btn.innerText === 'Bianco e Nero') btn.classList.add('active');
         if (category === 'unconventional' && btn.innerText === 'Media Non Convenzionali') btn.classList.add('active');
+        if (category === 'disegno' && btn.innerText === 'Disegno') btn.classList.add('active');
     });
 
     // Filter items

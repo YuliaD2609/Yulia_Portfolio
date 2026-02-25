@@ -121,7 +121,7 @@
         Russia <span class="fi fi-ru" style="border-radius: 2px;"></span>
       </h3>
       <div class="gallery-grid">
-        <div class="gallery-item no-click"><img src="images/foto1.jpg" alt="Russia 1"></div>
+        <div class="gallery-item no-click"><img src="images/pics/russia1.jpg" alt="Russia 1"></div>
         <div class="gallery-item no-click"><img src="images/foto2.jpg" alt="Russia 2"></div>
         <div class="gallery-item no-click"><img src="images/arte1.jpg" alt="Russia 3"></div>
       </div>
@@ -144,10 +144,41 @@
       <h3 style="display: flex; align-items: center; gap: 10px; margin-bottom: 2rem;">
         Ungheria <span class="fi fi-hu" style="border-radius: 2px;"></span>
       </h3>
-      <div class="gallery-grid">
-        <div class="gallery-item no-click"><img src="images/pics/croa1.jpg" alt="Ungheria 1"></div>
-        <div class="gallery-item no-click"><img src="images/pics/croa2.jpg" alt="Ungheria 2"></div>
-        <div class="gallery-item no-click"><img src="images/arte1.jpg" alt="Ungheria 3"></div>
+      <div style="display: grid; grid-template-columns: 2fr 3fr; gap: 6px; max-width: 1400px; align-items: stretch;">
+
+        <!-- Left: ung1 + ung4 stacked (orizzontali) -->
+        <div style="display: flex; flex-direction: column; gap: 6px; height: 350px;">
+          <div style="overflow: hidden; border-radius: var(--radius-sm); cursor: default; flex: 1;">
+            <img src="images/pics/ung1.jpg" alt="Ungheria 1" loading="lazy"
+              style="width: 100%; height: 100%; object-fit: cover; object-position: center 70%; display: block; transition: transform 0.6s ease;"
+              onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+          </div>
+          <div style="overflow: hidden; border-radius: var(--radius-sm); cursor: default; flex: 1;">
+            <img src="images/pics/ung4.jpg" alt="Ungheria 4" loading="lazy"
+              style="width: 100%; height: 100%; object-fit: cover; object-position: center 70%; display: block; transition: transform 0.6s ease;"
+              onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+          </div>
+        </div>
+
+        <!-- Right: ung2 + ung3 + ung5 affiancate (verticali) -->
+        <div style="display: flex; flex-direction: row; gap: 6px; height: 350px;">
+          <div style="overflow: hidden; border-radius: var(--radius-sm); cursor: default; flex: 1;">
+            <img src="images/pics/ung2.jpg" alt="Ungheria 2" loading="lazy"
+              style="width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.6s ease;"
+              onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+          </div>
+          <div style="overflow: hidden; border-radius: var(--radius-sm); cursor: default; flex: 1;">
+            <img src="images/pics/ung3.jpg" alt="Ungheria 3" loading="lazy"
+              style="width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.6s ease;"
+              onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+          </div>
+          <div style="overflow: hidden; border-radius: var(--radius-sm); cursor: default; flex: 1;">
+            <img src="images/pics/ung5.jpg" alt="Ungheria 5" loading="lazy"
+              style="width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.6s ease;"
+              onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+          </div>
+        </div>
+
       </div>
     </div>
 
