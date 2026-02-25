@@ -442,6 +442,11 @@ section {
   transition: opacity 0.3s ease;
 }
 
+/* Use on gallery/magazine items that are not links */
+.no-click {
+  cursor: default;
+}
+
 /* Tabs */
 .tabs {
   display: flex;
@@ -780,7 +785,14 @@ footer {
   letter-spacing: 2px;
   text-decoration: none;
   color: var(--color-text);
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, opacity 0.4s ease;
+
+  /* Hidden until the custom font is confirmed loaded */
+  opacity: 0;
+}
+
+.logo a.font-loaded {
+  opacity: 1;
 }
 
 /* =========================================

@@ -39,6 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initScrollAnimations();
     initDynamicAge();
     initBirthdayBanner();
+    initLogoFont();
 
     // Check which projects container exists
     if (document.getElementById('github-projects')) {
@@ -58,6 +59,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
     updateCopyrightYear();
 });
+
+/* =========================================
+   LOGO FONT REVEAL
+   ========================================= */
+function initLogoFont() {
+    const logoLinks = document.querySelectorAll('.logo a');
+    if (!logoLinks.length) return;
+
+    const revealLogo = () => {
+        logoLinks.forEach(el => el.classList.add('font-loaded'));
+    };
+
+    // Use the CSS Font Loading API to wait for Sacramento to be ready
+    if (document.fonts && document.fonts.load) {
+        // A fallback timeout in case the font never loads (e.g. offline)
+        const fallback = setTimeout(revealLogo, 3000);
+
+        document.fonts.load('1em Sacramento').then(() => {
+            clearTimeout(fallback);
+            revealLogo();
+        }).catch(() => {
+            clearTimeout(fallback);
+            revealLogo();
+        });
+    } else {
+        // Browser doesn't support Font Loading API – reveal immediately
+        revealLogo();
+    }
+}
 
 /* =========================================
    DYNAMIC AGE
