@@ -40,6 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initDynamicAge();
     initBirthdayBanner();
     initLogoFont();
+    initVisitorCounter();
 
     // Check which projects container exists
     if (document.getElementById('github-projects')) {
@@ -59,6 +60,56 @@ document.addEventListener('DOMContentLoaded', () => {
 
     updateCopyrightYear();
 });
+
+/* =========================================
+   VISITOR COUNTER (secret – only visible with ?stats in URL)
+   ========================================= */
+function initVisitorCounter() {
+    const COUNTER_URL = 'https://hits.sh/YuliaD2609.github.io.svg?style=flat&color=8a6a4b&label=Visitatori';
+    const SESSION_KEY = 'yulia_visit_counted';
+
+    // Only increment the counter once per browser session.
+    // If the user navigates between pages, sessionStorage still has the flag
+    // and we skip the tracking call — they aren't counted twice.
+    if (!sessionStorage.getItem(SESSION_KEY)) {
+        const tracker = new Image();
+        tracker.src = COUNTER_URL;
+        tracker.style.display = 'none';
+        document.body.appendChild(tracker);
+        sessionStorage.setItem(SESSION_KEY, '1');
+    }
+
+    // Show the badge only when ?stats is in the URL
+    if (!window.location.search.includes('stats')) return;
+
+    const badge = document.createElement('div');
+    badge.style.cssText = `
+        position: fixed;
+        bottom: 24px;
+        right: 24px;
+        background: rgba(255,255,255,0.92);
+        backdrop-filter: blur(8px);
+        border: 1px solid rgba(138,106,75,0.3);
+        border-radius: 20px;
+        padding: 8px 14px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+        z-index: 99999;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-family: var(--font-main);
+        font-size: 0.82rem;
+        color: var(--color-text);
+    `;
+
+    const img = document.createElement('img');
+    img.src = COUNTER_URL;
+    img.alt = 'Visitor count';
+    img.style.cssText = 'height: 20px; display: block;';
+
+    badge.appendChild(img);
+    document.body.appendChild(badge);
+}
 
 /* =========================================
    LOGO FONT REVEAL

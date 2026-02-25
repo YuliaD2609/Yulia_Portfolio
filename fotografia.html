@@ -54,15 +54,15 @@
     <div class="magazine-grid fade-in">
       <!-- Item 1 (Large 2x2) -->
       <div class="magazine-item no-click">
-        <img src="images/instagram/post_1.jpg" loading="lazy" alt="Highlight Photo 1">
+        <img src="images/instagram/post_4.jpg" loading="lazy" alt="Highlight Photo 1">
       </div>
       <!-- Item 2 (Wide 2x1) -->
       <div class="magazine-item no-click">
-        <img src="images/instagram/post_4.jpg" loading="lazy" alt="Highlight Photo 2">
+        <img src="images/instagram/insta9.jpg.jpg" loading="lazy" alt="Highlight Photo 2">
       </div>
       <!-- Item 3 (Small 1x1) -->
       <div class="magazine-item no-click">
-        <img src="images/pics/pic2.jpg" loading="lazy" alt="Highlight Photo 3">
+        <img src="images/pics/pic_ver1.jpg" loading="lazy" alt="Highlight Photo 3">
       </div>
       <!-- Item 4 (Small 1x1) -->
       <div class="magazine-item no-click">
@@ -88,10 +88,30 @@
       <h3 style="display: flex; align-items: center; gap: 10px; margin-bottom: 2rem;">
         Croazia <span class="fi fi-hr" style="border-radius: 2px;"></span>
       </h3>
-      <div class="gallery-grid">
-        <div class="gallery-item no-click"><img src="images/pics/croa1.jpg" alt="Croazia 1"></div>
-        <div class="gallery-item no-click"><img src="images/pics/croa2.jpg" alt="Croazia 2"></div>
-        <div class="gallery-item no-click"><img src="images/arte1.jpg" alt="Croazia 3"></div>
+
+      <div style="display: grid; grid-template-columns: 1fr 4fr; gap: 6px; max-width: 1100px; align-items: stretch;">
+
+        <!-- Left: croa3 portrait -->
+        <div style="overflow: hidden; border-radius: var(--radius-sm); cursor: default; height: 350px;">
+          <img src="images/pics/croa3.jpg" alt="Croazia – museo" loading="lazy"
+            style="width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.6s ease;"
+            onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+        </div>
+
+        <!-- Right: croa1 + croa2 side by side -->
+        <div style="display: flex; flex-direction: row; gap: 6px; height: 350px;">
+          <div style="overflow: hidden; border-radius: var(--radius-sm); cursor: default; flex: 1;">
+            <img src="images/pics/croa1.jpg" alt="Croazia – lago" loading="lazy"
+              style="width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.6s ease;"
+              onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+          </div>
+          <div style="overflow: hidden; border-radius: var(--radius-sm); cursor: default; flex: 1;">
+            <img src="images/pics/croa2.jpg" alt="Croazia – tramonto" loading="lazy"
+              style="width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.6s ease;"
+              onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+          </div>
+        </div>
+
       </div>
     </div>
 
@@ -136,10 +156,35 @@
       <h3 style="display: flex; align-items: center; gap: 10px; margin-bottom: 2rem;">
         Italia <span class="fi fi-it" style="border-radius: 2px;"></span>
       </h3>
-      <div class="gallery-grid">
-        <div class="gallery-item no-click"><img src="images/pics/ita1.jpg" alt="Italia 1"></div>
-        <div class="gallery-item no-click"><img src="images/pics/ita3.jpg" alt="Italia 2"></div>
-        <div class="gallery-item no-click"><img src="images/arte1.jpg" alt="Italia 3"></div>
+
+      <div style="display: grid; grid-template-columns: 1fr 6fr; gap: 6px; max-width: 1300px; align-items: stretch;">
+
+        <!-- Left: ita1 portrait -->
+        <div style="overflow: hidden; border-radius: var(--radius-sm); cursor: default; height: 350px;">
+          <img src="images/pics/ita1.jpg" alt="Italia – parco" loading="lazy"
+            style="width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.6s ease;"
+            onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+        </div>
+
+        <!-- Right: ita2 + ita3 + ita4 side by side -->
+        <div style="display: flex; flex-direction: row; gap: 6px; height: 350px;">
+          <div style="overflow: hidden; border-radius: var(--radius-sm); cursor: default; flex: 1;">
+            <img src="images/pics/ita2.jpg" alt="Italia – spiaggia" loading="lazy"
+              style="width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.6s ease;"
+              onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+          </div>
+          <div style="overflow: hidden; border-radius: var(--radius-sm); cursor: default; flex: 1;">
+            <img src="images/pics/ita3.jpg" alt="Italia – cupola" loading="lazy"
+              style="width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.6s ease;"
+              onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+          </div>
+          <div style="overflow: hidden; border-radius: var(--radius-sm); cursor: default; flex: 0.6;">
+            <img src="images/pics/ita4.jpg" alt="Italia – statua" loading="lazy"
+              style="width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.6s ease;"
+              onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
