@@ -80,7 +80,10 @@
   </section>
 
   <!-- Viaggi Section -->
-  <section class="container" style="margin-top: 5rem;">
+  <section class="container" style="margin-top: 4rem;">
+    <div
+      style="width: 150px; height: 3px; background-color: var(--color-primary); margin: 0 auto 3rem auto; border-radius: 2px;">
+    </div>
     <h2 style="text-align: center; margin-bottom: 3rem;">Viaggi</h2>
 
     <!-- Croazia -->
@@ -89,7 +92,8 @@
         Croazia <span class="fi fi-hr" style="border-radius: 2px;"></span>
       </h3>
 
-      <div style="display: grid; grid-template-columns: 1fr 4fr; gap: 6px; max-width: 1100px; align-items: stretch;">
+      <div class="viaggi-gallery"
+        style="display: grid; grid-template-columns: 1fr 4fr; gap: 6px; max-width: 1300px; align-items: stretch;">
 
         <!-- Left: croa3 portrait -->
         <div style="overflow: hidden; border-radius: var(--radius-sm); cursor: default; height: 350px;">
@@ -132,10 +136,32 @@
       <h3 style="display: flex; align-items: center; gap: 10px; margin-bottom: 2rem;">
         Spagna <span class="fi fi-es" style="border-radius: 2px;"></span>
       </h3>
-      <div class="gallery-grid">
-        <div class="gallery-item no-click"><img src="images/foto1.jpg" alt="Spagna 1"></div>
-        <div class="gallery-item no-click"><img src="images/foto2.jpg" alt="Spagna 2"></div>
-        <div class="gallery-item no-click"><img src="images/arte1.jpg" alt="Spagna 3"></div>
+      <div class="viaggi-gallery"
+        style="display: grid; grid-template-columns: 1fr 3fr; gap: 6px; max-width: 1300px; align-items: stretch;">
+        <!-- Left: sp1 portrait -->
+        <div style="overflow: hidden; border-radius: var(--radius-sm); cursor: default; height: 350px;">
+          <img src="images/pics/sp1.jpg" alt="Spagna 1" loading="lazy"
+            style="width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.6s ease;"
+            onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+        </div>
+        <!-- Right: sp2 + sp3 + sp4 side by side -->
+        <div style="display: flex; flex-direction: row; gap: 6px; height: 350px;">
+          <div style="overflow: hidden; border-radius: var(--radius-sm); cursor: default; flex: 1;">
+            <img src="images/pics/sp2.jpg" alt="Spagna 2" loading="lazy"
+              style="width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.6s ease;"
+              onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+          </div>
+          <div style="overflow: hidden; border-radius: var(--radius-sm); cursor: default; flex: 1;">
+            <img src="images/pics/sp3.jpg" alt="Spagna 3" loading="lazy"
+              style="width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.6s ease;"
+              onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+          </div>
+          <div style="overflow: hidden; border-radius: var(--radius-sm); cursor: default; flex: 1;">
+            <img src="images/pics/sp4.jpg" alt="Spagna 4" loading="lazy"
+              style="width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.6s ease;"
+              onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+          </div>
+        </div>
       </div>
     </div>
 
@@ -144,7 +170,8 @@
       <h3 style="display: flex; align-items: center; gap: 10px; margin-bottom: 2rem;">
         Ungheria <span class="fi fi-hu" style="border-radius: 2px;"></span>
       </h3>
-      <div style="display: grid; grid-template-columns: 2fr 3fr; gap: 6px; max-width: 1400px; align-items: stretch;">
+      <div class="viaggi-gallery"
+        style="display: grid; grid-template-columns: 2fr 3fr; gap: 6px; max-width: 1400px; align-items: stretch;">
 
         <!-- Left: ung1 + ung4 stacked (orizzontali) -->
         <div style="display: flex; flex-direction: column; gap: 6px; height: 350px;">
@@ -188,7 +215,8 @@
         Italia <span class="fi fi-it" style="border-radius: 2px;"></span>
       </h3>
 
-      <div style="display: grid; grid-template-columns: 1fr 6fr; gap: 6px; max-width: 1300px; align-items: stretch;">
+      <div class="viaggi-gallery"
+        style="display: grid; grid-template-columns: 1fr 6fr; gap: 6px; max-width: 1300px; align-items: stretch;">
 
         <!-- Left: ita1 portrait -->
         <div style="overflow: hidden; border-radius: var(--radius-sm); cursor: default; height: 350px;">

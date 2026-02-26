@@ -407,6 +407,32 @@ section {
   opacity: 1;
 }
 
+/* About Grid */
+.about-grid {
+  grid-template-columns: 1fr 2fr;
+}
+
+@media (max-width: 1024px) {
+  .about-grid {
+    grid-template-columns: 0.8fr 2fr;
+    /* Make left part smaller */
+  }
+}
+
+@media (max-width: 850px) {
+  .about-grid {
+    grid-template-columns: 0.7fr 2fr;
+    /* Shrink left part further on small tablets */
+  }
+}
+
+@media (max-width: 768px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    /* Stack on mobile */
+  }
+}
+
 #explore {
   padding-top: var(--spacing-md);
 }
@@ -583,6 +609,61 @@ footer {
     flex-direction: column;
     gap: var(--spacing-sm);
   }
+
+  .nav-links {
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .nav-links a {
+    font-size: 0.75rem;
+    /* Smaller font to fit all categories */
+    letter-spacing: 0.02em;
+  }
+
+  /* Prevent overlapping of header on mobile */
+  section.container,
+  .hero {
+    margin-top: calc(var(--spacing-lg) + 3rem) !important;
+  }
+
+  /* Viaggi responsive gallery */
+  .viaggi-gallery {
+    grid-template-columns: 1fr !important;
+    display: grid !important;
+    gap: 6px !important;
+  }
+
+  .viaggi-gallery>div[style*="flex-direction: row"],
+  .viaggi-gallery>div[style*="flex-direction: column"] {
+    flex-direction: column !important;
+    height: auto !important;
+  }
+
+  /* The individual image wrappers */
+  .viaggi-gallery>div>div,
+  .viaggi-gallery>div:not([style*="flex-direction"]) {
+    height: 300px !important;
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-links {
+    gap: 8px;
+    /* Even tighter for very small screens */
+  }
+
+  .nav-links a {
+    font-size: 0.65rem;
+  }
+
+  /* Adjust height for very small screens */
+  .viaggi-gallery>div>div,
+  .viaggi-gallery>div:not([style*="flex-direction"]) {
+    height: 250px !important;
+  }
 }
 
 /* =========================================
@@ -690,6 +771,48 @@ footer {
   .magazine-item:nth-child(1) {
     grid-column: span 2 !important;
     grid-row: span 2 !important;
+  }
+}
+
+/* Eventi Responsive Grids */
+.eventi-grid {
+  grid-template-columns: repeat(2, 1fr) !important;
+  max-width: 800px !important;
+  margin-bottom: 4rem !important;
+  grid-auto-rows: 350px !important;
+}
+
+.eventi-grid.eventi-speciali {
+  grid-template-columns: repeat(3, 1fr) !important;
+}
+
+.eventi-grid.eventi-feste {
+  grid-template-columns: repeat(3, 1fr) !important;
+  max-width: 1000px !important;
+  grid-auto-rows: 300px !important;
+}
+
+.eventi-item {
+  height: 100% !important;
+  /* Managed by grid-auto-rows */
+}
+
+.eventi-item.big {
+  grid-column: span 2 !important;
+}
+
+@media (max-width: 768px) {
+
+  .eventi-grid,
+  .eventi-grid.eventi-speciali,
+  .eventi-grid.eventi-feste {
+    grid-template-columns: 1fr !important;
+    grid-auto-rows: 250px !important;
+  }
+
+  .eventi-item,
+  .eventi-item.big {
+    grid-column: span 1 !important;
   }
 }
 
