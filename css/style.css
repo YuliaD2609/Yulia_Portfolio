@@ -473,6 +473,11 @@ section {
   cursor: default;
 }
 
+/* Hide gallery items while preserving their base display property when revealed */
+.gallery-hidden {
+  display: none !important;
+}
+
 /* Tabs */
 .tabs {
   display: flex;

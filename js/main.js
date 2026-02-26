@@ -1,7 +1,7 @@
 
 // Gallery Filter Logic
 function filterGallery(category) {
-    const items = document.querySelectorAll('.gallery-item');
+    const items = document.querySelectorAll('[data-category]');
     const buttons = document.querySelectorAll('.filter-btn');
 
     // Update buttons
@@ -28,10 +28,10 @@ function filterGallery(category) {
     items.forEach(item => {
         const itemCategory = item.getAttribute('data-category');
         if (category === 'all' || itemCategory === category) {
-            item.style.display = 'block';
+            item.classList.remove('gallery-hidden');
             // Re-trigger animation if possible, or just show
         } else {
-            item.style.display = 'none';
+            item.classList.add('gallery-hidden');
         }
     });
 }
