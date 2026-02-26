@@ -94,39 +94,43 @@
     </section>
 
     <!-- Contact/Booking Section -->
-    <section class="contact-section fade-in" style="margin-top: 8rem; padding-top: 0; padding-bottom: 3rem;">
+    <section class="contact-section fade-in" style="margin-top: 8rem; padding-top: 0; padding-bottom: 5rem;">
         <div class="container">
-            <div class="contact-layout" style="text-align: center; max-width: 600px; margin: 0 auto;">
-                <div class="contact-text">
-                    <h2>Vuoi immortalare i tuoi ricordi?</h2>
-                    <p
-                        style="color: var(--color-text-light); font-size: 1.1rem; margin-bottom: 2rem; line-height: 1.8;">
-                        Se sei interessato a uno shooting fotografico, a una collaborazione o vuoi chiedermi
-                        informazioni, scrivimi.
-                        <br><br>
-                        Compila il modulo e sarò felice di catturare la tua storia.
-                    </p>
-                </div>
+            <div class="contact-layout cute-contact-wrapper"
+                style="text-align: center; max-width: 650px; margin: 0 auto;">
+                <div class="cute-contact-card">
+                    <div class="contact-text" style="margin-bottom: 2.5rem;">
+                        <h2>Vuoi immortalare i tuoi ricordi? <span class="floating-icon">📸</span></h2>
+                        <p style="color: var(--color-text-light); font-size: 1.1rem; line-height: 1.8;">
+                            Se sei interessato a uno shooting fotografico, a una collaborazione o vuoi chiedermi
+                            informazioni, scrivimi.
+                            <br><br>
+                            Compila il modulo e sarò felice di catturare la tua storia!
+                        </p>
+                    </div>
 
-                <!-- Form (Stacked) -->
-                <form class="contact-form" action="https://formspree.io/f/xwvbkznd" method="POST"
-                    style="text-align: left;">
-                    <div>
-                        <label for="email" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">La tua
-                            Email</label>
-                        <input type="email" id="email" name="email" placeholder="esempio@email.com" required>
-                    </div>
-                    <div>
-                        <label for="message"
-                            style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Messaggio</label>
-                        <textarea id="message" name="message" placeholder="Raccontami la tua idea..."
-                            required></textarea>
-                    </div>
-                    <div style="text-align: left;">
-                        <button type="submit" class="cta-button" style="border: none; cursor: pointer;">Invia
-                            Messaggio</button>
-                    </div>
-                </form>
+                    <!-- Form (Stacked) -->
+                    <form class="contact-form" action="https://formspree.io/f/xwvbkznd" method="POST"
+                        style="text-align: left;">
+                        <div style="margin-bottom: 1.5rem;">
+                            <label for="email"
+                                style="display: block; margin-bottom: 0.5rem; font-weight: 500; color: var(--color-text);">La
+                                tua Email</label>
+                            <input type="email" id="email" name="email" class="cute-input"
+                                placeholder="esempio@email.com" required>
+                        </div>
+                        <div style="margin-bottom: 2rem;">
+                            <label for="message"
+                                style="display: block; margin-bottom: 0.5rem; font-weight: 500; color: var(--color-text);">Messaggio</label>
+                            <textarea id="message" name="message" class="cute-input"
+                                style="min-height: 120px; resize: vertical;" placeholder="Raccontami la tua idea..."
+                                required></textarea>
+                        </div>
+                        <div style="text-align: center;">
+                            <button type="submit" class="cute-btn">Invia Messaggio</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
