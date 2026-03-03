@@ -125,10 +125,47 @@
       <h3 style="display: flex; align-items: center; gap: 10px; margin-bottom: 2rem;">
         Russia <span class="fi fi-ru" style="border-radius: 2px;"></span>
       </h3>
-      <div class="gallery-grid">
-        <div class="gallery-item no-click"><img src="images/photography/russia/russia1.jpg" alt="Russia 1"></div>
-        <div class="gallery-item no-click"><img src="images/photography/russia/foto2.jpg" alt="Russia 2"></div>
-        <div class="gallery-item no-click"><img src="images/photography/russia/arte1.jpg" alt="Russia 3"></div>
+      <div class="viaggi-gallery"
+        style="display: grid; grid-template-columns: 1fr 2fr; gap: 6px; max-width: 1400px; align-items: stretch;">
+
+        <!-- Left: stacked (horizontal) images -->
+        <div style="display: flex; flex-direction: column; gap: 6px; height: 350px;">
+          <div style="overflow: hidden; border-radius: var(--radius-sm); cursor: default; flex: 1;">
+            <img src="images/photography/russia/russia1.jpg" alt="Russia 1" loading="lazy"
+              style="width: 100%; height: 100%; object-fit: cover; object-position: center 70%; display: block; transition: transform 0.6s ease;"
+              onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+          </div>
+          <div style="overflow: hidden; border-radius: var(--radius-sm); cursor: default; flex: 1;">
+            <img src="images/photography/russia/russia4.jpg" alt="Russia 4" loading="lazy"
+              style="width: 100%; height: 100%; object-fit: cover; object-position: center 70%; display: block; transition: transform 0.6s ease;"
+              onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+          </div>
+        </div>
+
+        <!-- Right: side-by-side (vertical) images -->
+        <div style="display: flex; flex-direction: row; gap: 6px; height: 350px;">
+          <div style="overflow: hidden; border-radius: var(--radius-sm); cursor: default; flex: 1;">
+            <img src="images/photography/russia/russia2.jpg" alt="Russia 2" loading="lazy"
+              style="width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.6s ease;"
+              onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+          </div>
+          <div style="overflow: hidden; border-radius: var(--radius-sm); cursor: default; flex: 1;">
+            <img src="images/photography/russia/russia3.jpg" alt="Russia 3" loading="lazy"
+              style="width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.6s ease;"
+              onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+          </div>
+          <div style="overflow: hidden; border-radius: var(--radius-sm); cursor: default; flex: 1;">
+            <img src="images/photography/russia/russia5.jpg" alt="Russia 5" loading="lazy"
+              style="width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.6s ease;"
+              onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+          </div>
+          <div style="overflow: hidden; border-radius: var(--radius-sm); cursor: default; flex: 1;">
+            <img src="images/photography/russia/russia6.jpg" alt="Russia 6" loading="lazy"
+              style="width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.6s ease;"
+              onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+          </div>
+        </div>
+
       </div>
     </div>
 
