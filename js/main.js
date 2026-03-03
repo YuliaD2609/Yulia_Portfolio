@@ -40,6 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initScrollAnimations();
     initDynamicAge();
     initBirthdayBanner();
+    initUrgentBanner();
     initLogoFont();
     initVisitorCounter();
 
@@ -360,5 +361,27 @@ function initBirthdayBanner() {
         if (e.target === modal) {
             modal.classList.add('hidden');
         }
+    });
+}
+
+/* =========================================
+   12. URGENT BANNER LOGIC
+   ========================================= */
+function initUrgentBanner() {
+    const banner = document.getElementById('urgent-banner');
+    const closeBtn = document.getElementById('close-urgent-banner');
+
+    if (!banner || !closeBtn) return;
+
+    // Check if dismissed in this session
+    if (!sessionStorage.getItem('urgent_banner_dismissed')) {
+        setTimeout(() => {
+            banner.classList.remove('hidden');
+        }, 800); // slight delay
+    }
+
+    closeBtn.addEventListener('click', () => {
+        banner.classList.add('hidden');
+        sessionStorage.setItem('urgent_banner_dismissed', 'true');
     });
 }
