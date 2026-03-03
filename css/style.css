@@ -816,6 +816,9 @@ footer {
   }
 
   .eventi-item:nth-child(n),
+  .eventi-item:nth-child(1),
+  .eventi-item:nth-child(2),
+  .eventi-item:nth-child(3),
   .eventi-item.big:nth-child(n) {
     grid-column: span 1 !important;
     grid-row: span 1 !important;
