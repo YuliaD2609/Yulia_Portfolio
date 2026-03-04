@@ -50,9 +50,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const featuredRepos = ['FarFromHome', 'SecureNotes', 'Clock'];
         initGithubProjects(3, 'github-projects', true, false, featuredRepos);
     }
-    if (document.getElementById('all-projects-container')) {
-        // Progetti page: fetch ALL repos fresh, no limit, exclude portfolio repos
-        initGithubProjects(0, 'all-projects-container', true, true);
+    if (document.getElementById('university-projects-container') && document.getElementById('personal-projects-container')) {
+        // Progetti page: fetch ALL repos fresh, divide them into university and personal
+        initSplitGithubProjects();
     }
 
     // Initialize Instagram (functions internally checks for container existence)
@@ -306,6 +306,104 @@ async function initGithubProjects(limit = 4, containerId = 'github-projects', hi
     } catch (error) {
         console.error('Error fetching GitHub repos:', error);
         projectsContainer.innerHTML = '<p>Impossibile caricare i progetti in questo momento.</p>';
+    }
+}
+
+async function initSplitGithubProjects() {
+    const uniContainer = document.getElementById('university-projects-container');
+    const persContainer = document.getElementById('personal-projects-container');
+    if (!uniContainer || !persContainer) return;
+
+    const username = 'YuliaD2609';
+
+    // Map of uni projects to their banner labels
+    const uniProjectsMap = {
+        'farfromhome': 'Mobile Programming',
+        'moodle2.0': 'Tecnologie Software per il Web',
+        'justintime': 'Ingegneria del Software',
+        'securenotes': 'Sicurezza dei Dati',
+        'world_happiness_report': 'Statistica e Analisi dei Dati',
+        'citizenship_analysis': 'Machine Learning'
+    };
+
+    try {
+        const allRepos = await fetchAllGithubRepos(username);
+
+        uniContainer.innerHTML = '';
+        persContainer.innerHTML = '';
+
+        if (allRepos.length === 0) {
+            uniContainer.innerHTML = '<p>Nessun progetto trovato.</p>';
+            persContainer.innerHTML = '<p>Nessun progetto trovato.</p>';
+            return;
+        }
+
+        let uniCount = 0;
+        let persCount = 0;
+
+        allRepos.forEach(repo => {
+            // Filter out portfolio/site repos
+            if (repo.name.toLowerCase().includes('portfolio') || repo.name.toLowerCase().includes('yulia.github.io')) return;
+
+            const repoNameLower = repo.name.toLowerCase();
+            const isUniProject = uniProjectsMap.hasOwnProperty(repoNameLower);
+            const bannerLabel = isUniProject ? uniProjectsMap[repoNameLower] : '';
+
+            const langColor = LANG_COLORS[repo.language] || LANG_COLORS['default'];
+            const langBadge = repo.language
+                ? `<span style="display:inline-flex;align-items:center;gap:5px;font-size:0.78rem;color:var(--color-text-light);">
+                       <span style="width:10px;height:10px;border-radius:50%;background:${langColor};display:inline-block;flex-shrink:0;"></span>
+                       ${repo.language}
+                   </span>`
+                : '';
+
+            const starCount = repo.stargazers_count > 0
+                ? `<span style="font-size:0.78rem;color:var(--color-text-light);">⭐ ${repo.stargazers_count}</span>`
+                : '';
+
+            const card = document.createElement('div');
+            card.className = 'project-card fade-in visible';
+            card.style.cssText = 'display:flex;flex-direction:column;';
+
+            // Special layout for title + banner if it's a uni project
+            let titleHTML = `<h3 style="margin:0 0 0.5rem;">${repo.name}</h3>`;
+            if (isUniProject && bannerLabel) {
+                // Incorporating the gallery-badge style directly or reusing the class
+                titleHTML = `
+                <div style="display:flex; align-items:center; gap: 10px; margin:0 0 0.5rem; flex-wrap: wrap;">
+                    <h3 style="margin:0;">${repo.name}</h3>
+                    <span class="gallery-badge" style="position: relative; top: auto; right: auto; bottom: auto; display: inline-block;">${bannerLabel}</span>
+                </div>`;
+            }
+
+            card.innerHTML = `
+                ${titleHTML}
+                <p style="flex:1;margin:0 0 1rem;">${repo.description || 'Nessuna descrizione disponibile.'}</p>
+                <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-top:auto;">
+                    <div style="display:flex;align-items:center;gap:10px;">
+                        ${langBadge}
+                        ${starCount}
+                    </div>
+                    <a href="${repo.html_url}" target="_blank" style="color:var(--color-primary);font-weight:bold;white-space:nowrap;">Visualizza &rarr;</a>
+                </div>
+            `;
+
+            if (isUniProject) {
+                uniContainer.appendChild(card);
+                uniCount++;
+            } else {
+                persContainer.appendChild(card);
+                persCount++;
+            }
+        });
+
+        if (uniCount === 0) uniContainer.innerHTML = '<p>Nessun progetto trovato.</p>';
+        if (persCount === 0) persContainer.innerHTML = '<p>Nessun progetto trovato.</p>';
+
+    } catch (error) {
+        console.error('Error fetching GitHub repos:', error);
+        uniContainer.innerHTML = '<p>Impossibile caricare i progetti in questo momento.</p>';
+        persContainer.innerHTML = '<p>Impossibile caricare i progetti in questo momento.</p>';
     }
 }
 
