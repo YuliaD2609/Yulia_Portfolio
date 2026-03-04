@@ -663,6 +663,18 @@ footer {
     margin-top: calc(var(--spacing-lg) + 3rem) !important;
   }
 
+  /* Fotografia Hero Buttons - Mobile view */
+  .foto-hero-buttons {
+    flex-wrap: nowrap !important;
+    gap: 8px !important;
+  }
+
+  .foto-hero-buttons .cta-button {
+    font-size: 0.8rem !important;
+    padding: 0.6rem 1rem !important;
+    white-space: nowrap;
+  }
+
   /* Viaggi responsive gallery */
   .viaggi-gallery {
     grid-template-columns: 1fr !important;
@@ -698,13 +710,6 @@ footer {
   .viaggi-gallery>div>div,
   .viaggi-gallery>div:not([style*="flex-direction"]) {
     height: 250px !important;
-  }
-
-  .cta-button {
-    padding: 0.6rem 1rem;
-    font-size: 0.8rem;
-    white-space: nowrap;
-    margin-top: var(--spacing-sm);
   }
 }
 
