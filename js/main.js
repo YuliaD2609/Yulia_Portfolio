@@ -368,6 +368,9 @@ function initBirthdayBanner() {
    12. URGENT BANNER LOGIC
    ========================================= */
 function initUrgentBanner() {
+    // Only run banner logic on mobile devices (width <= 768px)
+    if (window.innerWidth > 768) return;
+
     const banner = document.getElementById('urgent-banner');
     const closeBtn = document.getElementById('close-urgent-banner');
 

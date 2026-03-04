@@ -985,7 +985,7 @@ footer {
   left: 0;
   top: 50%;
   transform: translateY(-50%) translateX(0);
-  background: linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%);
+  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-primary) 100%);
   padding: 1rem 1.5rem;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
@@ -993,7 +993,7 @@ footer {
   z-index: 9999;
   max-width: 250px;
   text-align: center;
-  border: 2px solid white;
+  border: 2px solid var(--color-surface);
   border-left: none;
   transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
@@ -1011,7 +1011,7 @@ footer {
 
 .urgent-banner p {
   font-size: 0.95rem;
-  color: white;
+  color: var(--color-surface);
   margin: 0;
   font-weight: 500;
   text-align: center;
@@ -1028,7 +1028,7 @@ footer {
   top: 5px;
   right: 10px;
   cursor: pointer;
-  color: white;
+  color: var(--color-surface);
   font-weight: bold;
   font-size: 1.2rem;
   transition: transform 0.2s;
@@ -1037,6 +1037,13 @@ footer {
 
 .close-urgent-btn:hover {
   transform: scale(1.2);
+}
+
+/* Hide urgent banner on screens larger than mobile */
+@media (min-width: 769px) {
+  .urgent-banner {
+    display: none !important;
+  }
 }
 
 /* Modal Styles */
