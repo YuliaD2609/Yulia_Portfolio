@@ -478,6 +478,26 @@ section {
   transition: opacity 0.3s ease;
 }
 
+/* Badge for special notes inside gallery items */
+.gallery-badge {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: rgba(255, 255, 255, 0.85);
+  color: var(--color-primary);
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  box-shadow: var(--shadow-sm);
+  z-index: 10;
+  pointer-events: none;
+  /* Make unclickable so it doesn't block image interactions */
+  backdrop-filter: blur(4px);
+}
+
 /* Use on gallery/magazine items that are not links */
 .no-click {
   cursor: default;
@@ -1053,6 +1073,96 @@ footer {
 @media (min-width: 769px) {
   .urgent-banner {
     display: none !important;
+  }
+}
+
+/* =========================================
+   13. DISEGNO LAYOUT WRAPPER
+   ========================================= */
+.disegno-wrapper {
+  --d-height: clamp(280px, 32vw, 420px);
+  /* Height responsive to screen size */
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: var(--spacing-sm);
+  /* Standard spacing */
+  width: 100%;
+  height: var(--d-height);
+  flex-wrap: nowrap;
+}
+
+.disegno-wrapper>.gallery-item {
+  aspect-ratio: unset !important;
+  height: 100%;
+}
+
+.disegno-standard {
+  flex: 0 0 var(--d-height);
+  /* Make left image a perfect square */
+}
+
+.disegno-stacked {
+  /* Fix width to perfectly fit 2 smaller squares with no empty space */
+  flex: 0 0 calc((var(--d-height) - var(--spacing-sm)) / 2);
+}
+
+.collab-item {
+  flex: 0 1 calc(var(--d-height) * 1.6);
+  /* Retain proportion for collab */
+  position: relative;
+}
+
+.disegno-stacked .gallery-sub-item {
+  height: calc((100% - var(--spacing-sm)) / 2);
+  width: 100%;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  position: relative;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.disegno-stacked .gallery-sub-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+@media (max-width: 768px) {
+  .disegno-wrapper {
+    flex-direction: column;
+    height: auto;
+    align-items: stretch;
+    /* Stack vertically on mobile */
+  }
+
+  .disegno-standard,
+  .collab-item {
+    flex: unset !important;
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 1 !important;
+    /* Restore square for left/collab */
+  }
+
+  .disegno-stacked {
+    flex: unset !important;
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  .disegno-stacked>div {
+    flex-direction: row !important;
+    /* Side-by-side doodles on mobile */
+  }
+
+  .disegno-stacked .gallery-sub-item {
+    width: calc((100% - var(--spacing-sm)) / 2) !important;
+    height: auto !important;
+    aspect-ratio: 1 !important;
   }
 }
 
