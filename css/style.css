@@ -699,6 +699,13 @@ footer {
   .viaggi-gallery>div:not([style*="flex-direction"]) {
     height: 250px !important;
   }
+
+  .cta-button {
+    padding: 0.6rem 1rem;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    margin-top: var(--spacing-sm);
+  }
 }
 
 /* =========================================
