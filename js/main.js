@@ -203,9 +203,25 @@ const LANG_COLORS = {
 
 /**
  * Fetches ALL repos for a user, handling GitHub API pagination automatically.
+ * Caches the results in sessionStorage for 1 hour to improve navigation speed.
  * Returns a flat array of all repo objects.
  */
 async function fetchAllGithubRepos(username) {
+    const CACHE_KEY = `github_repos_${username}`;
+    const CACHE_TIME_KEY = `github_repos_time_${username}`;
+    const CACHE_EXPIRY_MS = 60 * 60 * 1000; // 1 hour
+
+    // Check cache first
+    const cachedRepos = sessionStorage.getItem(CACHE_KEY);
+    const cacheTime = sessionStorage.getItem(CACHE_TIME_KEY);
+
+    if (cachedRepos && cacheTime) {
+        const age = Date.now() - parseInt(cacheTime, 10);
+        if (age < CACHE_EXPIRY_MS) {
+            return JSON.parse(cachedRepos);
+        }
+    }
+
     const allRepos = [];
     let page = 1;
     const perPage = 100; // GitHub's maximum per page
@@ -222,6 +238,10 @@ async function fetchAllGithubRepos(username) {
         if (repos.length < perPage) break;
         page++;
     }
+
+    // Save to cache
+    sessionStorage.setItem(CACHE_KEY, JSON.stringify(allRepos));
+    sessionStorage.setItem(CACHE_TIME_KEY, Date.now().toString());
 
     return allRepos;
 }
