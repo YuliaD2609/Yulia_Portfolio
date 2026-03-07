@@ -67,13 +67,22 @@ document.addEventListener('DOMContentLoaded', () => {
    VISITOR COUNTER (secret – only visible with ?stats in URL)
    ========================================= */
 function initVisitorCounter() {
-    const COUNTER_URL = 'https://hits.sh/YuliaD2609.github.io.svg?style=flat&color=8a6a4b&label=Visitatori';
+    // Imposta il flag nel localStorage se l'URL contiene ?ignoreme
+    if (window.location.search.includes('ignoreme')) {
+        localStorage.setItem('yulia_ignore_visit', 'true');
+        alert("Le tue visite da questo browser non verranno più contate!");
+    }
+
+    const shouldIgnore = localStorage.getItem('yulia_ignore_visit') === 'true';
+
+    // Aggiunto _v2 per azzerare il contatore!
+    const COUNTER_URL = 'https://hits.sh/YuliaD2609.github.io_v2.svg?style=flat&color=8a6a4b&label=Visitatori';
     const SESSION_KEY = 'yulia_visit_counted';
 
     // Only increment the counter once per browser session.
     // If the user navigates between pages, sessionStorage still has the flag
     // and we skip the tracking call — they aren't counted twice.
-    if (!sessionStorage.getItem(SESSION_KEY)) {
+    if (!shouldIgnore && !sessionStorage.getItem(SESSION_KEY)) {
         const tracker = new Image();
         tracker.src = COUNTER_URL;
         tracker.style.display = 'none';
