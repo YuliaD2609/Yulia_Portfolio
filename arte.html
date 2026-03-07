@@ -89,7 +89,7 @@
       </div>
 
       <!-- Pittura Grid from the second line: 4 per row, keep same height of grid 1 items -->
-      <div style="grid-column: 1 / -1; display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.5rem; width: 100%;">
+      <div class="painting-grid-row" style="grid-column: 1 / -1; display: grid; gap: 0.5rem; width: 100%;">
         <div class="gallery-item" data-category="painting" style="background-color: transparent; aspect-ratio: auto;">
           <img src="images/art/pittura4.jpg" alt="Pittura 4" style="object-fit: cover; width: 100%; height: 100%;"
             loading="lazy">
@@ -115,8 +115,8 @@
             loading="lazy">
         </div>
 
-        <div class="gallery-item" data-category="painting"
-          style="background-color: transparent; aspect-ratio: auto; height: 100%; grid-column: span 2; display: flex; align-items: flex-start; justify-content: flex-start;">
+        <div class="gallery-item pittura-span-2" data-category="painting"
+          style="background-color: transparent; aspect-ratio: auto; height: 100%; display: flex; align-items: flex-start; justify-content: flex-start;">
           <img src="images/art/pittura9.jpg" alt="Pittura 9"
             style="object-fit: contain; object-position: top left; width: 75%; height: 100%;" loading="lazy">
         </div>
@@ -161,13 +161,15 @@
         </div>
 
         <!-- Vertical Image 1 -->
-        <div class="gallery-item" style="height: 100%; display: flex; background: transparent; border-radius: 0;">
+        <div class="gallery-item mixed-vertical"
+          style="height: 100%; display: flex; background: transparent; border-radius: 0;">
           <img src="images/art/mixed5.jpg" alt="Mixed Media 5"
             style="object-fit: contain; width: auto; height: 100%; border-radius: var(--radius-sm);" loading="lazy">
         </div>
 
         <!-- Vertical Image 2 -->
-        <div class="gallery-item" style="height: 100%; display: flex; background: transparent; border-radius: 0;">
+        <div class="gallery-item mixed-vertical"
+          style="height: 100%; display: flex; background: transparent; border-radius: 0;">
           <img src="images/art/mixed6.jpg" alt="Mixed Media 6"
             style="object-fit: contain; width: auto; height: 100%; border-radius: var(--radius-sm);" loading="lazy">
         </div>
