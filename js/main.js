@@ -67,22 +67,25 @@ document.addEventListener('DOMContentLoaded', () => {
    VISITOR COUNTER (secret – only visible with ?stats in URL)
    ========================================= */
 function initVisitorCounter() {
-    // Imposta il flag nel localStorage se l'URL contiene ?ignoreme
+    // Non contare automaticamente le visite se si visualizza il sito sul PC in locale (es. file:// o localhost)
+    const isLocal = window.location.hostname === 'localhost' ||
+        window.location.hostname === '127.0.0.1' ||
+        window.location.hostname === '';
+
+    // Permette di ignorare manualmente aggiungendo ?ignoreme (per quando visiti il sito live)
     if (window.location.search.includes('ignoreme')) {
         localStorage.setItem('yulia_ignore_visit', 'true');
-        alert("Le tue visite da questo browser non verranno più contate!");
+        alert("Perfetto! Le tue visite dal sito live su questo browser non verranno più contate.");
     }
 
     const shouldIgnore = localStorage.getItem('yulia_ignore_visit') === 'true';
 
-    // Aggiunto _v2 per azzerare il contatore!
-    const COUNTER_URL = 'https://hits.sh/YuliaD2609.github.io_v2.svg?style=flat&color=8a6a4b&label=Visitatori';
+    // URL specifico per il sito (diviso da eventuali contatori su GitHub)
+    const COUNTER_URL = 'https://hits.sh/yuliad2609.github.io/website.svg?style=flat&color=8a6a4b&label=Visitatori';
     const SESSION_KEY = 'yulia_visit_counted';
 
-    // Only increment the counter once per browser session.
-    // If the user navigates between pages, sessionStorage still has the flag
-    // and we skip the tracking call — they aren't counted twice.
-    if (!shouldIgnore && !sessionStorage.getItem(SESSION_KEY)) {
+    // Only increment the counter once per browser session, and ONLY if not local and not ignored.
+    if (!isLocal && !shouldIgnore && !sessionStorage.getItem(SESSION_KEY)) {
         const tracker = new Image();
         tracker.src = COUNTER_URL;
         tracker.style.display = 'none';
