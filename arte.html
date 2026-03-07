@@ -88,6 +88,40 @@
         <img src="images/art/pittura3.jpg" alt="Pittura 3" loading="lazy">
       </div>
 
+      <!-- Pittura Grid from the second line: 4 per row, keep same height of grid 1 items -->
+      <div style="grid-column: 1 / -1; display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.5rem; width: 100%;">
+        <div class="gallery-item" data-category="painting" style="background-color: transparent; aspect-ratio: auto;">
+          <img src="images/art/pittura4.jpg" alt="Pittura 4" style="object-fit: cover; width: 100%; height: 100%;"
+            loading="lazy">
+        </div>
+
+        <div class="gallery-item" data-category="painting" style="background-color: transparent; aspect-ratio: auto;">
+          <img src="images/art/pittura5.jpg" alt="Pittura 5" style="object-fit: cover; width: 100%; height: 100%;"
+            loading="lazy">
+        </div>
+
+        <div class="gallery-item" data-category="painting" style="background-color: transparent; aspect-ratio: auto;">
+          <img src="images/art/pittura6.jpg" alt="Pittura 6" style="object-fit: cover; width: 100%; height: 100%;"
+            loading="lazy">
+        </div>
+
+        <div class="gallery-item" data-category="painting" style="background-color: transparent; aspect-ratio: auto;">
+          <img src="images/art/pittura7.jpg" alt="Pittura 7" style="object-fit: cover; width: 100%; height: 100%;"
+            loading="lazy">
+        </div>
+
+        <div class="gallery-item" data-category="painting" style="background-color: transparent; aspect-ratio: auto;">
+          <img src="images/art/pittura8.jpg" alt="Pittura 8" style="object-fit: cover; width: 100%; height: 100%;"
+            loading="lazy">
+        </div>
+
+        <div class="gallery-item" data-category="painting"
+          style="background-color: transparent; aspect-ratio: auto; height: 100%; grid-column: span 2; display: flex; align-items: flex-start; justify-content: flex-start;">
+          <img src="images/art/pittura9.jpg" alt="Pittura 9"
+            style="object-fit: contain; object-position: top left; width: 75%; height: 100%;" loading="lazy">
+        </div>
+      </div>
+
       <!-- B&W -->
       <div class="gallery-item" data-category="bnw">
         <img src="images/art/bn1.jpg" alt="Bianco e Nero 1" style="object-position: center 50%;" loading="lazy">
@@ -97,12 +131,47 @@
         <img src="images/art/bn2.jpg" alt="Bianco e Nero 2" style="object-position: center 50%;" loading="lazy">
       </div>
 
-      <!-- Unconventional -->
-      <div class="gallery-item" data-category="unconventional"
-        style="grid-column: 1 / -1; aspect-ratio: auto; text-align: center;">
-        <img src="images/art/unconv1.jpg" alt="Unconventional Media"
-          style="width: auto; height: auto; max-width: 50%; max-height: 50vh; margin: 0 auto; display: inline-block;"
-          loading="lazy">
+      <!-- Unconventional (Mixed Media) - Stacked Layout Matching Doodles -->
+      <div class="disegno-wrapper" data-category="unconventional" style="flex-wrap: wrap; justify-content: flex-start;">
+
+        <!-- Stack 1 (2 squares) -->
+        <div class="gallery-item stacked disegno-stacked"
+          style="background: transparent; border-radius: 0; pointer-events: none;">
+          <div style="display: flex; flex-direction: column; gap: var(--spacing-sm); width: 100%; height: 100%;">
+            <div class="gallery-sub-item">
+              <img src="images/art/mixed1.jpg" alt="Mixed Media 1" loading="lazy">
+            </div>
+            <div class="gallery-sub-item">
+              <img src="images/art/mixed2.jpg" alt="Mixed Media 2" loading="lazy">
+            </div>
+          </div>
+        </div>
+
+        <!-- Stack 2 (2 squares) -->
+        <div class="gallery-item stacked disegno-stacked"
+          style="background: transparent; border-radius: 0; pointer-events: none;">
+          <div style="display: flex; flex-direction: column; gap: var(--spacing-sm); width: 100%; height: 100%;">
+            <div class="gallery-sub-item">
+              <img src="images/art/mixed3.jpg" alt="Mixed Media 3" loading="lazy">
+            </div>
+            <div class="gallery-sub-item">
+              <img src="images/art/mixed4.jpg" alt="Mixed Media 4" loading="lazy">
+            </div>
+          </div>
+        </div>
+
+        <!-- Vertical Image 1 -->
+        <div class="gallery-item" style="height: 100%; display: flex; background: transparent; border-radius: 0;">
+          <img src="images/art/mixed5.jpg" alt="Mixed Media 5"
+            style="object-fit: contain; width: auto; height: 100%; border-radius: var(--radius-sm);" loading="lazy">
+        </div>
+
+        <!-- Vertical Image 2 -->
+        <div class="gallery-item" style="height: 100%; display: flex; background: transparent; border-radius: 0;">
+          <img src="images/art/mixed6.jpg" alt="Mixed Media 6"
+            style="object-fit: contain; width: auto; height: 100%; border-radius: var(--radius-sm);" loading="lazy">
+        </div>
+
       </div>
 
       <!-- Disegno -->

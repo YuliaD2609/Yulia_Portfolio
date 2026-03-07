@@ -486,13 +486,23 @@ function initBirthdayBanner() {
    12. URGENT BANNER LOGIC
    ========================================= */
 function initUrgentBanner() {
-    // Only run banner logic on mobile devices (width <= 768px)
-    if (window.innerWidth > 768) return;
-
     const banner = document.getElementById('urgent-banner');
     const closeBtn = document.getElementById('close-urgent-banner');
 
     if (!banner || !closeBtn) return;
+
+    const bannerText = banner.querySelector('p');
+
+    // Determine banner text based on device
+    if (window.innerWidth <= 768) {
+        if (bannerText) {
+            bannerText.innerHTML = "<strong>Attenzione!</strong> Per una visione ottimale è suggerito l'uso di un pc oppure di attivare la modalità desktop.";
+        }
+    } else {
+        if (bannerText) {
+            bannerText.innerHTML = "<strong>Attenzione!</strong> Allarga la finestra per una visuale migliore!";
+        }
+    }
 
     // Check if dismissed in this session
     if (!sessionStorage.getItem('urgent_banner_dismissed')) {

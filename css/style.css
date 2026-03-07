@@ -441,7 +441,7 @@ section {
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: var(--spacing-sm);
+  gap: 0.5rem;
 }
 
 .gallery-item {
@@ -1081,12 +1081,7 @@ footer {
   transform: scale(1.2);
 }
 
-/* Hide urgent banner on screens larger than mobile */
-@media (min-width: 769px) {
-  .urgent-banner {
-    display: none !important;
-  }
-}
+
 
 /* =========================================
    13. DISEGNO LAYOUT WRAPPER
