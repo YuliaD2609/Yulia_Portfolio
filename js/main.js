@@ -492,27 +492,43 @@ function initUrgentBanner() {
     if (!banner || !closeBtn) return;
 
     const bannerText = banner.querySelector('p');
+    let isDismissed = sessionStorage.getItem('urgent_banner_dismissed') === 'true';
 
-    // Determine banner text based on device
-    if (window.innerWidth <= 768) {
-        if (bannerText) {
-            bannerText.innerHTML = "<strong>Attenzione!</strong> Per una visione ottimale è suggerito l'uso di un pc oppure di attivare la modalità desktop.";
-        }
-    } else {
-        if (bannerText) {
-            bannerText.innerHTML = "<strong>Attenzione!</strong> Allarga la finestra per una visuale migliore!";
-        }
-    }
+    function checkBanner() {
+        if (isDismissed) return;
 
-    // Check if dismissed in this session
-    if (!sessionStorage.getItem('urgent_banner_dismissed')) {
-        setTimeout(() => {
+        const screenWidth = window.screen.width;
+        const windowWidth = window.innerWidth;
+
+        if (screenWidth <= 768) {
+            if (bannerText) {
+                bannerText.innerHTML = "<strong>Attenzione!</strong> Per una visione ottimale è suggerito l'uso di un pc oppure di attivare la modalità desktop.";
+            }
             banner.classList.remove('hidden');
-        }, 800); // slight delay
+        } else {
+            if (bannerText) {
+                bannerText.innerHTML = "<strong>Attenzione!</strong> Allarga la finestra per una visuale migliore!";
+            }
+
+            if (windowWidth < 1200) {
+                banner.classList.remove('hidden');
+            } else {
+                banner.classList.add('hidden');
+            }
+        }
     }
+
+    // Initial check
+    setTimeout(() => {
+        checkBanner();
+    }, 800);
+
+    // Update on window resize
+    window.addEventListener('resize', checkBanner);
 
     closeBtn.addEventListener('click', () => {
         banner.classList.add('hidden');
+        isDismissed = true;
         sessionStorage.setItem('urgent_banner_dismissed', 'true');
     });
 }
