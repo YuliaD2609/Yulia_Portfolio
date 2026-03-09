@@ -454,13 +454,22 @@ section {
 
 @media (max-width: 1200px) {
 
-  .gallery-grid,
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+
   .painting-grid-row {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .pittura-span-2 {
     grid-column: span 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
   }
 }
 
@@ -829,13 +838,13 @@ footer {
     grid-auto-rows: 200px;
   }
 
-  .magazine-item:nth-child(n) {
+  .magazine-grid:not(.eventi-grid) .magazine-item:nth-child(n) {
     grid-column: span 1 !important;
     grid-row: span 1 !important;
   }
 
   /* Make 1st item big on mobile too */
-  .magazine-item:nth-child(1) {
+  .magazine-grid:not(.eventi-grid) .magazine-item:nth-child(1) {
     grid-column: span 2 !important;
     grid-row: span 2 !important;
   }
@@ -846,22 +855,42 @@ footer {
   grid-template-columns: repeat(2, 1fr) !important;
   max-width: 800px !important;
   margin-bottom: 4rem !important;
-  grid-auto-rows: 350px !important;
+  grid-auto-rows: auto !important;
+  /* Let aspect ratio decide height */
+}
+
+/* Solo per la prima griglia (Lauree) che non ha classi aggiuntive */
+.eventi-grid:not(.eventi-speciali):not(.eventi-feste) .eventi-item {
+  aspect-ratio: 398 / 350;
+  height: auto !important;
 }
 
 .eventi-grid.eventi-speciali {
   grid-template-columns: repeat(3, 1fr) !important;
 }
 
+.eventi-grid.eventi-speciali .eventi-item {
+  aspect-ratio: 264 / 350;
+  height: auto !important;
+}
+
+.eventi-grid.eventi-speciali .eventi-item.big {
+  aspect-ratio: 532 / 350;
+}
+
 .eventi-grid.eventi-feste {
   grid-template-columns: repeat(3, 1fr) !important;
   max-width: 1000px !important;
-  grid-auto-rows: 300px !important;
+}
+
+.eventi-grid.eventi-feste .eventi-item {
+  aspect-ratio: 331 / 300;
+  height: auto !important;
 }
 
 .eventi-item {
-  height: 100% !important;
-  /* Managed by grid-auto-rows */
+  /* No fixed height, let aspect ratio handle it */
+  position: relative;
 }
 
 .eventi-item.big {
@@ -870,20 +899,18 @@ footer {
 
 @media (max-width: 768px) {
 
-  .eventi-grid,
-  .eventi-grid.eventi-speciali,
-  .eventi-grid.eventi-feste {
-    grid-template-columns: 1fr !important;
-    grid-auto-rows: 250px !important;
+  .eventi-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
   }
 
-  .eventi-item:nth-child(n),
-  .eventi-item:nth-child(1),
-  .eventi-item:nth-child(2),
-  .eventi-item:nth-child(3),
-  .eventi-item.big:nth-child(n) {
-    grid-column: span 1 !important;
-    grid-row: span 1 !important;
+  .eventi-grid.eventi-speciali,
+  .eventi-grid.eventi-feste {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+
+  /* Maintain relative span on mobile */
+  .eventi-item.big {
+    grid-column: span 2 !important;
   }
 }
 
@@ -1158,41 +1185,7 @@ footer {
   transition: transform 0.6s ease;
 }
 
-@media (max-width: 1200px) {
-  .disegno-wrapper {
-    flex-direction: column;
-    height: auto;
-    align-items: stretch;
-    /* Stack vertically on mobile */
-  }
-
-  .disegno-standard,
-  .collab-item,
-  .mixed-vertical {
-    flex: unset !important;
-    width: 100% !important;
-    height: auto !important;
-    aspect-ratio: 1 !important;
-    /* Restore square for left/collab */
-  }
-
-  .disegno-stacked {
-    flex: unset !important;
-    width: 100% !important;
-    height: auto !important;
-  }
-
-  .disegno-stacked>div {
-    flex-direction: row !important;
-    /* Side-by-side doodles on mobile */
-  }
-
-  .disegno-stacked .gallery-sub-item {
-    width: calc((100% - var(--spacing-sm)) / 2) !important;
-    height: auto !important;
-    aspect-ratio: 1 !important;
-  }
-}
+/* Responsive properties handled organically by CSS variables and flex/aspect ratios without stacking on mobile. Removing the artificial breakpoints so they behave like the rest */
 
 /* Modal Styles */
 .modal {

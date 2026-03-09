@@ -220,8 +220,8 @@ const LANG_COLORS = {
  * Returns a flat array of all repo objects.
  */
 async function fetchAllGithubRepos(username) {
-    const CACHE_KEY = `github_repos_${username}`;
-    const CACHE_TIME_KEY = `github_repos_time_${username}`;
+    const CACHE_KEY = `github_repos_v2_${username}`;
+    const CACHE_TIME_KEY = `github_repos_time_v2_${username}`;
     const CACHE_EXPIRY_MS = 60 * 60 * 1000; // 1 hour
 
     // Check cache first
@@ -496,57 +496,12 @@ function initBirthdayBanner() {
 }
 
 /* =========================================
-   12. URGENT BANNER LOGIC
+   12. URGENT BANNER LOGIC (DISABLED)
    ========================================= */
 function initUrgentBanner() {
+    // Feature disabled: Responsive layout now handles smaller screens correctly.
     const banner = document.getElementById('urgent-banner');
-    const closeBtn = document.getElementById('close-urgent-banner');
-
-    if (!banner || !closeBtn) return;
-
-    // Restrict the urgent banner to specific sections
-    const path = window.location.pathname.toLowerCase();
-    const isAllowedPage = path.includes('eventi') || path.includes('arte') || path.includes('fotografia');
-    if (!isAllowedPage) return;
-
-    const bannerText = banner.querySelector('p');
-    let isDismissed = sessionStorage.getItem('urgent_banner_dismissed') === 'true';
-
-    function checkBanner() {
-        if (isDismissed) return;
-
-        const screenWidth = window.screen.width;
-        const windowWidth = window.innerWidth;
-
-        if (screenWidth <= 768) {
-            if (bannerText) {
-                bannerText.innerHTML = "<strong>Attenzione!</strong> Per una visione ottimale è suggerito l'uso di un pc oppure di attivare la modalità desktop.";
-            }
-            banner.classList.remove('hidden');
-        } else {
-            if (bannerText) {
-                bannerText.innerHTML = "<strong>Attenzione!</strong> Allarga la finestra per una visuale migliore!";
-            }
-
-            if (windowWidth < 1200) {
-                banner.classList.remove('hidden');
-            } else {
-                banner.classList.add('hidden');
-            }
-        }
+    if (banner) {
+        banner.style.display = 'none'; // Ensure it stays hidden
     }
-
-    // Initial check
-    setTimeout(() => {
-        checkBanner();
-    }, 800);
-
-    // Update on window resize
-    window.addEventListener('resize', checkBanner);
-
-    closeBtn.addEventListener('click', () => {
-        banner.classList.add('hidden');
-        isDismissed = true;
-        sessionStorage.setItem('urgent_banner_dismissed', 'true');
-    });
 }
