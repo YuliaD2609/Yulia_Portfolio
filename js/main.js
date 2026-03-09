@@ -185,7 +185,7 @@ function initScrollAnimations() {
             }
         });
     }, {
-        threshold: 0.1
+        threshold: 0.01
     });
 
     document.querySelectorAll('.fade-in').forEach(el => {
