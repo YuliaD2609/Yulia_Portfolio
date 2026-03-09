@@ -503,6 +503,11 @@ function initUrgentBanner() {
 
     if (!banner || !closeBtn) return;
 
+    // Restrict the urgent banner to specific sections
+    const path = window.location.pathname.toLowerCase();
+    const isAllowedPage = path.includes('eventi') || path.includes('arte') || path.includes('fotografia');
+    if (!isAllowedPage) return;
+
     const bannerText = banner.querySelector('p');
     let isDismissed = sessionStorage.getItem('urgent_banner_dismissed') === 'true';
 
