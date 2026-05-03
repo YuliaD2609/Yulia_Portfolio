@@ -345,6 +345,7 @@ async function initGithubProjects(limit = 4, containerId = 'github-projects', hi
 async function initSplitGithubProjects() {
     const uniContainer = document.getElementById('university-projects-container');
     const persContainer = document.getElementById('personal-projects-container');
+    const pubContainer = document.getElementById('released-apps-container');
     if (!uniContainer || !persContainer) return;
 
     const username = 'YuliaD2609';
@@ -359,20 +360,26 @@ async function initSplitGithubProjects() {
         'citizenship_analysis': 'Machine Learning'
     };
 
+    // Repos to be shown in the Publications section
+    const publicationsList = ['clock', 'insieme'];
+
     try {
         const allRepos = await fetchAllGithubRepos(username);
 
         uniContainer.innerHTML = '';
         persContainer.innerHTML = '';
+        if (pubContainer) pubContainer.innerHTML = '';
 
         if (allRepos.length === 0) {
             uniContainer.innerHTML = '<p>Nessun progetto trovato.</p>';
             persContainer.innerHTML = '<p>Nessun progetto trovato.</p>';
+            if (pubContainer) pubContainer.innerHTML = '<p>Nessun progetto trovato.</p>';
             return;
         }
 
         let uniCount = 0;
         let persCount = 0;
+        let pubCount = 0;
 
         allRepos.forEach(repo => {
             // Filter out portfolio/site repos
@@ -380,6 +387,7 @@ async function initSplitGithubProjects() {
 
             const repoNameLower = repo.name.toLowerCase();
             const isUniProject = uniProjectsMap.hasOwnProperty(repoNameLower);
+            const isPublication = publicationsList.includes(repoNameLower);
             const bannerLabel = isUniProject ? uniProjectsMap[repoNameLower] : '';
 
             const langColor = LANG_COLORS[repo.language] || LANG_COLORS['default'];
@@ -421,7 +429,10 @@ async function initSplitGithubProjects() {
                 </div>
             `;
 
-            if (isUniProject) {
+            if (isPublication && pubContainer) {
+                pubContainer.appendChild(card);
+                pubCount++;
+            } else if (isUniProject) {
                 uniContainer.appendChild(card);
                 uniCount++;
             } else {
@@ -432,11 +443,13 @@ async function initSplitGithubProjects() {
 
         if (uniCount === 0) uniContainer.innerHTML = '<p>Nessun progetto trovato.</p>';
         if (persCount === 0) persContainer.innerHTML = '<p>Nessun progetto trovato.</p>';
+        if (pubContainer && pubCount === 0) pubContainer.innerHTML = '<p>Nessun progetto trovato.</p>';
 
     } catch (error) {
         console.error('Error fetching GitHub repos:', error);
         uniContainer.innerHTML = '<p>Impossibile caricare i progetti in questo momento.</p>';
         persContainer.innerHTML = '<p>Impossibile caricare i progetti in questo momento.</p>';
+        if (pubContainer) pubContainer.innerHTML = '<p>Impossibile caricare i progetti in questo momento.</p>';
     }
 }
 
