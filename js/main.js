@@ -352,16 +352,16 @@ async function initSplitGithubProjects() {
 
     // Map of uni projects to their banner labels
     const uniProjectsMap = {
-        'farfromhome': 'Mobile Programming',
         'moodle2.0': 'Tecnologie Software per il Web',
         'justintime': 'Ingegneria del Software',
         'securenotes': 'Sicurezza dei Dati',
         'world_happiness_report': 'Statistica e Analisi dei Dati',
-        'citizenship_analysis': 'Machine Learning'
+        'citizenship_analysis': 'Machine Learning',
+        'BD2_TEAM14': 'Basi di dati 2'
     };
 
     // Repos to be shown in the Released Apps section
-    const publicationsList = ['clock', 'insieme'];
+    const publicationsList = ['clock', 'insieme', 'AvanziZero'];
 
     try {
         const allRepos = await fetchAllGithubRepos(username);
