@@ -406,20 +406,19 @@ async function initSplitGithubProjects() {
             card.className = 'project-card fade-in visible';
             card.style.cssText = 'display:flex;flex-direction:column;';
 
-            // Special layout for title + banner if it's a uni project
             let titleHTML = `<h3 style="margin:0 0 0.5rem;">${repo.name}</h3>`;
+            let badgeHTML = '';
             if (isUniProject && bannerLabel) {
-                // Incorporating the gallery-badge style directly or reusing the class
-                titleHTML = `
-                <div style="display:flex; align-items:center; gap: 10px; margin:0 0 0.5rem; flex-wrap: wrap;">
-                    <h3 style="margin:0;">${repo.name}</h3>
+                badgeHTML = `
+                <div style="margin-top: 0.5rem; margin-bottom: 0.5rem;">
                     <span class="gallery-badge" style="position: relative; top: auto; right: auto; bottom: auto; display: inline-block;">${bannerLabel}</span>
                 </div>`;
             }
 
             card.innerHTML = `
                 ${titleHTML}
-                <p style="flex:1;margin:0 0 1rem;">${repo.description || 'Nessuna descrizione disponibile.'}</p>
+                ${badgeHTML}
+                <p style="flex:1;margin:0 0 0.5rem;">${repo.description || 'Nessuna descrizione disponibile.'}</p>
                 <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-top:auto;">
                     <div style="display:flex;align-items:center;gap:10px;">
                         ${langBadge}
