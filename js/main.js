@@ -361,7 +361,7 @@ async function initSplitGithubProjects() {
     };
 
     // Repos to be shown in the Released Apps section
-    const publicationsList = ['clock', 'insieme', 'avanzizero'];
+    const publicationsList = ['clock', 'insieme', 'avanzizero', 'tvtracker'];
 
     try {
         const allRepos = await fetchAllGithubRepos(username);
