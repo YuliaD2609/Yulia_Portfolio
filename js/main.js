@@ -357,7 +357,7 @@ async function initSplitGithubProjects() {
         'securenotes': 'Sicurezza dei Dati',
         'world_happiness_report': 'Statistica e Analisi dei Dati',
         'citizenship_analysis': 'Machine Learning',
-        'GameStatsDashboard': 'Basi di dati 2'
+        'gamestatsdashboard': 'Basi di dati 2'
     };
 
     // Repos to be shown in the Released Apps section
