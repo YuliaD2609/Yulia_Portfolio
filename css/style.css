@@ -1,4 +1,4 @@
-﻿@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Pacifico&family=Sacramento&family=Caveat:wght@600&family=Inter:wght@300;400;600&family=Playfair+Display:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Pacifico&family=Sacramento&family=Caveat:wght@600&family=Inter:wght@300;400;600&family=Playfair+Display:wght@700&display=swap');
 
 /* =========================================
    1. VARIABLES & THEME SETUP
@@ -860,8 +860,13 @@ footer {
 }
 
 /* Solo per la prima griglia (Lauree) che non ha classi aggiuntive */
+.eventi-grid:not(.eventi-speciali):not(.eventi-feste) {
+  grid-template-columns: repeat(3, 1fr) !important;
+  max-width: 1000px !important;
+}
+
 .eventi-grid:not(.eventi-speciali):not(.eventi-feste) .eventi-item {
-  aspect-ratio: 398 / 350;
+  aspect-ratio: 1 / 1;
   height: auto !important;
 }
 
